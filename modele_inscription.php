@@ -2,7 +2,7 @@
 
   $nom = $_GET['nom'];
   $prenom = $_GET['prenom'];
-  $telephone = $_GET['telephone'];
+  $telephone = $_GET['tel'];
   $mdp = $_GET['mdp'];
   $email = $_GET['email'];
 
@@ -23,7 +23,7 @@
     foreach ($connexion->query($sql) as $row)
       if ($row['email'] != $email){
         echo "Cet email fut déjà utilisé par un autre utilisateur. Vérifiez que l'email écrite est la bonne.";
-        echo "<script> location.href='inscription.html'; </script>";
+        header( "refresh:5;url=inscription.html");
         die();
       }
   }
@@ -44,7 +44,7 @@
     else {
       foreach ($connexion->query($sql) as $row)
       echo $row['prenom']." ".$row['nom'].", vous avez bien été inscrit.<br/>\n";
-      echo "<script> location.href='.html'; </script>";
+      header( "refresh:5;url=.html");
       die();
     }
  ?>

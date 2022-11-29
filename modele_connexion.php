@@ -20,12 +20,12 @@
     foreach ($connexion->query($sql) as $row)
       if ($row['motdepase'] != $mdp){
         echo "Mot de passe ou email incorrecte. Vérifiez l'écriture";
-        echo "<script> location.href='connexion.html'; </script>";
+        header( "refresh:5;url=connexion.html" );
         die();
       } else {
         session_start();
         $_SESSION['login'] =$email;
-        echo "<script> location.href='.html'; </script>";
+        header( "refresh:5;url=.html");
         die();
       }}
 
