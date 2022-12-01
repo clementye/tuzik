@@ -5,13 +5,28 @@
 <title>
 Page Inscription v.0.5
 </title>
+<style>
+  body {
+color:black;
+background-color:black;
+background-image:url("LOGOTuZik.png");
+background-repeat:no-repeat;
+background-position:top right;
+background-position:50% 35%;
+}
+</style>
 </head>
 <body>
 <form action="reponse.php" method="GET">
+<br>
   Prénom :<input type="text" name="nom">
+<br>
   Nom :<input type="text" name="">
+<br>
   Email :<input type="text" name="age">
+  <br>
   Mot de passe :<input type="text" name="age">
+  <br>
   Téléphone :<input type="text" name="age">
   <br>
   Cochez si vrai : <br>
@@ -34,12 +49,12 @@ Page Inscription v.0.5
       exit();
     }
 
-    $sql = "SELECT * FROM utilisateur"
-    if(!$connexion->query($sql)) echo "Erreur serveur. Réessayer ulterieurement.";
-  else {
+    $sql = "SELECT * FROM utilisateur";
+    if(!$connexion->query($sql)) { echo "Erreur serveur. Réessayer ulterieurement.";
+    } else {
     foreach ($connexion->query($sql) as $row)
       if ($row['email'] == $email){
-        echo "Cet email fut déjà utilisé par un autre utilisateur. Vérifiez que l'email écrite est la bonne."
+        echo "Cet email fut déjà utilisé par un autre utilisateur. Vérifiez que l'email écrite est la bonne.";
       }
   }
 
