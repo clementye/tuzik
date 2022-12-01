@@ -1,3 +1,3 @@
 <?php
-header("Location: /controllers/accueil.php");
+header("Location: /tu-zik/controllers/accueil.php");
 ?>

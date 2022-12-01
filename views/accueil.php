@@ -6,14 +6,11 @@
 	</head>
 	<body>
 		<h1>Bienvenu</h1>
-		<form action="/controllers/authentifier.php" method="post">
-			<?php if ($erreur) {
+		<form action="/tu-zik/controllers/authentifier.php" method="post">
+			<?php if (isset($erreur)) {
 				echo $erreur;
 				echo "<br>";
 			} ?>
-			<label for="nom">Nom d'utilisateur :</label>
-			<input type="nom" id="nom" name="nom" />
-			<br />
 			<label for="email">Email :</label>
 			<input type="email" id="email" name="email" />
 			<br />
@@ -23,7 +20,7 @@
 			<button name="action" value="sign-in">S'inscrire</button>
 			<button name="action" value="sign-up">Se connecter</button>
 		</form>
-		<?php if ($confirmation) {
+		<?php if (isset($confirmation)) {
 			echo $confirmation;
 		} ?>
 	</body>
