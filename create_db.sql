@@ -1,0 +1,9 @@
+DROP DATABASE IF EXISTS `sample`;
+CREATE DATABASE `sample`;
+USE `sample`;
+
+CREATE TABLE `user` (
+	`id` INT AUTO_INCREMENT PRIMARY KEY,
+	`email` VARCHAR(80) NOT NULL UNIQUE,
+	`password_hash` VARCHAR(80) NOT NULL
+);
