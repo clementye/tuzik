@@ -5,7 +5,7 @@
 		<title>Accueil</title>
 	</head>
 	<body>
-		<h1>Bienvenu <?php echo $_SESSION["user-name"] = $nomUtilisateur; ?></h1>
+		<h1>Bienvenu <?php echo $_SESSION["user-name"]; ?></h1>
         <p>Vous êtes bien connecté.</p>
 	</body>
 </html>
