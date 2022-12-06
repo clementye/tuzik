@@ -1,0 +1,133 @@
+*{
+   margin: 0;
+   padding:0;
+   box-sizing: border-box;
+}
+/* Nav Section*/
+.nav-bar{
+   position: relative;
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   max-width: 100%;
+   height: 100px;
+   box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3), 0 7px 21px 0 rgba(0, 0, 0, 0.20);
+}
+
+.logo{
+   width: 150px;
+   height: 100px
+}
+.logo img{
+   width: 65%;
+}
+
+.menu-bar{
+   width: 60%;
+}
+
+.menu-bar ul {
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+}
+
+.menu-bar ul li{
+   list-style-type: none;
+   text-transform: capitalize;
+}
+
+.menu-bar ul li:hover{
+   border-bottom: 2px solid #6960ec;
+}
+
+.menu-bar ul li a{
+   text-decoration: none;
+   color: #000;
+   font-size: 18px;
+}
+
+.menu-bar ul li a:active{
+   color: #6960ec;
+}
+
+.menu-bar ul li:first-child a{
+   color: #6960ec;
+}
+
+.search-bar > input[type="search"] {
+   outline: none;
+   border: none;
+   padding: 10px;
+   padding-left: 65px; 
+   width: 170px;
+   height: 45px;
+   border: 1px solid #6960ec;
+   border-radius: 15px;
+   font-style: italic;
+}
+
+.search-bar > input[type="search"]:focus{
+   border: 1px solid gray;
+}
+
+.search-bar > input[type="search"]::placeholder{
+   color: black;
+   font-size: 15px;
+}
+
+.search-bar img{
+   position: absolute;
+   margin-left: 20px;
+   margin-top: 10px;
+   width: 25px;
+   height: 25px;
+}
+
+/* Welcome section */
+.welcome{
+   display: flex;
+   justify-content: space-around;
+   align-items: flex-start;
+   max-width: 100%;
+   margin-top: 5px;
+   margin-bottom: 20px;
+}
+.welcome .text{
+   margin-left: 25px;
+   width: 45%;
+}
+
+.welcome .text h1{
+   font-size: 50px;
+   margin-top: 30%;
+   margin-bottom: 20px;
+}
+
+.welcome .text p{
+   line-height: 2;
+   word-spacing: 1px;
+   font-size: 18px;
+   margin-bottom: 40px; 
+}
+
+.welcome .text a{
+   text-decoration: none;
+   text-transform: uppercase;
+   background: #6960ec;
+   color: #fff;
+   padding: 10px;
+   width: 340px;
+   height: 200px;
+   border-radius: 5px;
+}
+.welcome .image{
+   width: 50%;
+   border-radius: 15px;
+}
+
+.welcome .image img{
+   width: 100%;
+   border-radius: 15px;
+}
+
