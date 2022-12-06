@@ -2,7 +2,7 @@
 // Si l'email ou le mot de passe n'est pas spécifié
 if ($_POST["email"] == null or $_POST["password"] == null) {
 	// On prépare un message d'erreur.
-	$erreur = "L'email et le mot de passe doivent être renseignés.";
+	$erreur = "Veuillez saisir une email valide.";
 	require_once "../views/accueil.php";
 } else {
 	// Sinon, on récupère les fonctions pour gérer un utilisateur (ajouter, récupérer)
@@ -10,12 +10,22 @@ if ($_POST["email"] == null or $_POST["password"] == null) {
 
 	// Si on demande à s'inscrire
 	if ($_POST["action"] == "sign-in") {
-		// on ajoute l'utilisateur,
-		$ajouter_utilisateur(/*$_POST["nom"], $_POST["prenom"], $_POST["tel"],*/ $_POST["email"], $_POST["password"]);
 
-		// et on prépare un message de confirmation
-		$confirmation = "Votre compte fut bien ajouté.";
-		require_once "../views/accueil.php";
+		// On vérifie si l'email fut déjà utilisé par un autre compte ou non,
+		$mail = $verifier_mail($_POST["email"]);
+		if ($mail == false){
+			// si oui, on prépare un message d'erreur,
+			$erreur = "Veuillez saisir une email valide.";
+			require_once "../views/accueil.php";
+		} else {
+			// si non, on ajoute l'utilisateur,
+			$ajouter_utilisateur(/*$_POST["nom"], $_POST["prenom"], $_POST["tel"],*/ $_POST["email"], $_POST["password"]);
+
+			// et on prépare un message de confirmation
+			$confirmation = "Votre compte fut bien ajouté.";
+			require_once "../views/accueil.php";
+		}
+
 	} else if ($_POST["action"] == "sign-up") {
 		// Sinon, si on demande à se connecter
 
