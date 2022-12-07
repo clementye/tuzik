@@ -5,7 +5,7 @@
 		<title>Accueil</title>
         <style>
   body {
-background: url("TUZIK(bckgrnd2).png") no-repeat center center fixed;
+background: url("/images/TUZIK(bckgrnd2).png") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -32,7 +32,7 @@ background: url("TUZIK(bckgrnd2).png") no-repeat center center fixed;
 	</head>
 	<body>
     <logo>
-    <img src="newtuzik.png" alt="logo" style="width:20%;height:20%;">
+    <img src="/images/newtuzik.png" alt="logo" style="width:20%;height:20%;">
   </logo>
         <div class=l>
 		<form action="/controllers/authentifier.php" method="post">
