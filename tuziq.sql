@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS `TuZik?`.`utilisateur` (
   `Prenom` VARCHAR(50) NULL DEFAULT NULL,
   `telephone` VARCHAR(15) NULL DEFAULT NULL,
   `email` VARCHAR(50) NULL DEFAULT NULL,
-  `motdepasse` VARCHAR(32) NOT NULL,
+  `motdepasse` VARCHAR(80) NOT NULL,
   `Num Magasin` VARCHAR(45) NOT NULL DEFAULT 0,
   `Num Fabricant` VARCHAR(45) NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`))

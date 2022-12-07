@@ -5,7 +5,7 @@
 		<title>Accueil</title>
         <style>
   body {
-background: url("TUZIK(bckgrnd2).png") no-repeat center center fixed; 
+background: url("TUZIK(bckgrnd2).png") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -17,14 +17,14 @@ background: url("TUZIK(bckgrnd2).png") no-repeat center center fixed;
     margin-top: 10%;
     margin-right: 35%;
     margin-left: 35%;
-    background-color:hsla(0, 0%, 0%, 0.595);    
+    background-color:hsla(0, 0%, 0%, 0.595);
 }
 .logo {
     width: 0%;
     height: 0%;
     padding-top: 50%;
   }
-  .texte { 
+  .texte {
     color: white;
     font-family:  Courier New, monospace;
   }
@@ -35,7 +35,7 @@ background: url("TUZIK(bckgrnd2).png") no-repeat center center fixed;
     <img src="newtuzik.png" alt="logo" style="width:20%;height:20%;">
   </logo>
         <div class=l>
-		<action="/controllers/authentifier.php" method="post">
+		<form action="/controllers/authentifier.php" method="post">
 			<?php if (isset ($erreur)) {
 				echo $erreur;
 				echo "<br>";
@@ -50,7 +50,8 @@ background: url("TUZIK(bckgrnd2).png") no-repeat center center fixed;
       <br />
 			<button name="action" value="sign-up">Se connecter</button>
       <br />
-      <a href="/controllers/inscription.php">Pas encore inscrit ?</a>
+      <a href="/views/inscription.php">Pas encore inscrit ?</a>
+		</form>
 		</div>
 		<?php if (isset ($confirmation)) {
 			echo $confirmation;

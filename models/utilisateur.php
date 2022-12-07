@@ -3,8 +3,8 @@ require_once "connexion.php";
 
 $vérifier_mail = function (string $email) use($db) {
 	$statement = $db->prepare(
-		"SELECT email
-		FROM user
+		"SELECT *
+		FROM utilisateur
 		WHERE email = ?;"
 	);
 	$statement->execute([$email]);
@@ -12,16 +12,16 @@ $vérifier_mail = function (string $email) use($db) {
 	return $result;
 };
 
-$ajouter_utilisateur = function (string $email, string $motDePasse) use($db) {
-	$statement = $db->prepare("INSERT INTO user(/*id, Nom, Prenpm, telephone,*/ email, password_hash) VALUES (/*'', ?, ?, ?,*/ ?, ?);");
-	$statement->execute([/*$nom, $prenom, $tel,*/ $email, password_hash($motDePasse, PASSWORD_BCRYPT)]);
+$ajouter_utilisateur = function (string $nom, string $prenom, string $tel, string $email, string $motDePasse) use($db) {
+	$statement = $db->prepare("INSERT INTO utilisateur(id, Nom, Prenom, telephone, email, motdepasse) VALUES ('', ?, ?, ?, ?, ?);");
+	$statement->execute([$nom, $prenom, $tel, $email, $motDePasse]);
 	// TODO: Gestion des erreurs.
 };
 
 $recuperer_utilisateur = function (string $email) use($db) {
 	$statement = $db->prepare(
-		"SELECT id, email, password_hash
-		FROM user
+		"SELECT id, email, motdepasse
+		FROM utilisateur
 		WHERE email = ?;"
 	);
 	$statement->execute([$email]);
@@ -32,7 +32,7 @@ $recuperer_utilisateur = function (string $email) use($db) {
 /*	$modifier_utilisateur = function (string $motDePasse, string $nom, string $prenom, string $téléphone, string $email) use ($db) {
 		if ($motDePasse !== NULL){
 			$statement = $db -> prepare(
-				"UPDATE utilisateur SET password_bash = ? WHERE email = ?;"
+				"UPDATE utilisateur SET motdepasse = ? WHERE email = ?;"
 			);
 		}
 		if ($nom !== NULL){

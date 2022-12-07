@@ -2,7 +2,7 @@
 // Si l'email ou le mot de passe n'est pas spécifié
 if ($_POST["email"] == null or $_POST["password"] == null) {
 	// On prépare un message d'erreur.
-	$erreur = "Veuillez saisir une email valide.";
+	$erreur = "<div class=texte >Veuillez saisir une email valide1.</div>";
 	require_once "../views/accueil.php";
 } else {
 	// Sinon, on récupère les fonctions pour gérer un utilisateur (ajouter, récupérer)
@@ -12,18 +12,19 @@ if ($_POST["email"] == null or $_POST["password"] == null) {
 	if ($_POST["action"] == "sign-in") {
 
 		// On vérifie si l'email fut déjà utilisé par un autre compte ou non,
-		$mail = $verifier_mail($_POST["email"]);
-		if ($mail == false){
+		$mail = $vérifier_mail($_POST["email"]);
+		if ($mail == true){
 			// si oui, on prépare un message d'erreur,
-			$erreur = "Veuillez saisir une email valide.";
-			require_once "../views/accueil.php";
+			$erreur = "<div class=texte >Veuillez saisir une email valide2.</div>";
+			require_once "../views/inscription.php";
 		} else {
+			$hashedPW = password_hash($_POST["password"], PASSWORD_BCRYPT);
 			// si non, on ajoute l'utilisateur,
-			$ajouter_utilisateur(/*$_POST["nom"], $_POST["prenom"], $_POST["tel"],*/ $_POST["email"], $_POST["password"]);
+			$ajouter_utilisateur($_POST["nom"], $_POST["prenom"], $_POST["tel"], $_POST["email"], $hashedPW);
 
 			// et on prépare un message de confirmation
 			$confirmation = "Votre compte fut bien ajouté.";
-			require_once "../views/accueil.php";
+			require_once "../views/connexion.php";
 		}
 
 	} else if ($_POST["action"] == "sign-up") {
@@ -31,14 +32,15 @@ if ($_POST["email"] == null or $_POST["password"] == null) {
 
 		// on essaye de récupérer l'utilisateur depuis la base de données
 		$utilisateur = $recuperer_utilisateur($_POST["email"]);
-		$hash = $utilisateur->password_hash;
+		$hash = $utilisateur->motdepasse;
 
 		// Si on a rien récupéré
 		if ($utilisateur == false || !password_verify($_POST["password"], $hash)) {
 			// On indique que la connexion n'a pas fonctionné
+			//echo password_verify("toto")
 			$erreur = "L'email ou le mot de passe n'est pas bon.";
-			require_once "../views/accueil.php";
-		} else if (isset($utilisateur->id)) {
+			require_once "../views/connexion.php";
+		} else {
 			$nomUtilisateur ='';
 			$finNomUtilisateur = strpos($_POST["email"], '@');
 			for ($i=0; $i < $finNomUtilisateur; $i++) {
