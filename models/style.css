@@ -59,7 +59,7 @@
    outline: none;
    border: none;
    padding: 10px;
-   padding-left: 65px; 
+   padding-left: 65px;
    width: 170px;
    height: 45px;
    border: 1px solid #6960ec;
@@ -108,7 +108,7 @@
    line-height: 2;
    word-spacing: 1px;
    font-size: 18px;
-   margin-bottom: 40px; 
+   margin-bottom: 40px;
 }
 
 .welcome .text a{
@@ -130,4 +130,3 @@
    width: 100%;
    border-radius: 15px;
 }
-
