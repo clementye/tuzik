@@ -49,6 +49,7 @@ if ($_POST["email"] == null or $_POST["password"] == null) {
 			// Sinon, on enregistre l'id de l'utilisateur dans la session et on affiche la page suivante
 			session_start();
 			$_SESSION["user-id"] = $utilisateur->id;
+			$_SESSION["user-email"] = $utilisateur->email;
 			$_SESSION["user-name"] = $nomUtilisateur;
 			require_once "../views/espace_personnel.php";
 		}
