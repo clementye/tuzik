@@ -9,7 +9,7 @@
     require_once("/views/.php");
   } else {
     $modifier_utilisateur($_POST[]);
-    $confirmation = "Les changements furent effectués.";
+    $confirmation = "Les changements ont été effectués.";
   }
 
  ?>

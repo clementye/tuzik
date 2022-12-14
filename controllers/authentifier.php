@@ -11,7 +11,7 @@ if ($_POST["email"] == null or $_POST["password"] == null) {
 	// Si on demande à s'inscrire
 	if ($_POST["action"] == "sign-in") {
 
-		// On vérifie si l'email fut déjà utilisé par un autre compte ou non,
+		// On vérifie si l'email est déjà utilisé par un autre compte ou non,
 		$mail = $vérifier_mail($_POST["email"]);
 		if ($mail == true){
 			// si oui, on prépare un message d'erreur,
@@ -23,7 +23,7 @@ if ($_POST["email"] == null or $_POST["password"] == null) {
 			$ajouter_utilisateur($_POST["nom"], $_POST["prenom"], $_POST["tel"], $_POST["email"], $hashedPW);
 
 			// et on prépare un message de confirmation
-			$confirmation = "Votre compte fut bien ajouté.";
+			$confirmation = "Votre compte a bien été ajouté.";
 			require_once "../views/connexion.php";
 		}
 

@@ -2,9 +2,11 @@
 
 // Vérification des droits d'accès
 
-if (!isset($_SESSION['id'])) {
-    header('Location: index.php');
-    exit;
+session_start();
+  if (isset($_SESSION["user-name"])) {
+    require_once "../views/pageDemande.php";
+  } else {
+    require_once "../views/connexion.php";
 }
 
 // Initialisation des variables
@@ -28,25 +30,25 @@ if (isset($_POST['titre'])) {
     $prix = $_POST['prix'];
     // Vérification des données
     if ($titre == '') {
-        $erreur .= 'Le titre est vide.<br>';
+        $erreur = 'Le titre est vide.<br>';
     }
     if ($description == '') {
-        $erreur .= 'La description est vide.<br>';
+        $erreur = 'La description est vide.<br>';
     }
     if ($photo == '') {
-        $erreur .= 'La photo est vide.<br>';
+        $erreur = 'La photo est vide.<br>';
     }
     if ($nom == '') {
-        $erreur .= 'Le nom est vide.<br>';
+        $erreur = 'Le nom est vide.<br>';
     }
     if ($prenom == '') {
-        $erreur .= 'Le prénom est vide.<br>';
+        $erreur = 'Le prénom est vide.<br>';
     }
     if ($telephone == '') {
-        $erreur .= 'Le téléphone est vide.<br>';
+        $erreur = 'Le téléphone est vide.<br>';
     }
     if ($prix == '') {
-        $erreur .= 'Le prix est vide.<br>';
+        $erreur = 'Le prix est vide.<br>';
     }
     // Si pas d'erreur, on insère les données dans la base de données
     if ($erreur == '') {

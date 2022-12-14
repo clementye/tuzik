@@ -1,11 +1,8 @@
-// Affichage de la page
-
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
         <title>Demande d'article</title>
-        <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <h1>Demande d'article</h1>
@@ -51,5 +48,6 @@
             echo '<p class="message">' . $message . '</p>';
         }
         ?>
+        <a href="/views/accueil.php">RETOUR</a>
     </body>
 </html>
