@@ -9,7 +9,7 @@
 		<?php if (isset ($confirmation)) {
 			echo $confirmation;
 		} ?>
-		<a href="/views/accueil.php">Acceuil</a>
+		
 		<section>
       <nav>
          <div class="nav-bar">
