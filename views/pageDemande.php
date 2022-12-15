@@ -16,10 +16,6 @@
                 <input type="text" name="description" id="description" value="<?php echo $description; ?>">
             </p>
             <p>
-                <label for="photo">Photo :</label>
-                <input type="text" name="photo" id="photo" value="<?php echo $photo; ?>">
-            </p>
-            <p>
                 <label for="nom">Nom :</label>
                 <input type="text" name="nom" id="nom" value="<?php echo $nom; ?>">
             </p>
@@ -34,6 +30,11 @@
             <p>
                 <label for="prix">Prix :</label>
                 <input type="text" name="prix" id="prix" value="<?php echo $prix; ?>">
+            </p>
+            <p>
+                <label for="photo">photo</label><br>
+                <input type="file" id="photo" name="photo"><br><br>
+            </p>
             <p>
                 <input type="submit" value="Envoyer">
             </p>

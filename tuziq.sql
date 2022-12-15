@@ -88,12 +88,15 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `TuZik?`.`produit`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `TuZik?`.`produit` (
+CREATE TABLE IF NOT EXISTS `TuZik?`.`article` (
   `id` BIGINT NOT NULL AUTO_INCREMENT,
   `utilisateur_Id` BIGINT NOT NULL,
   `Titre` VARCHAR(75) NOT NULL,
-  `type` SMALLINT(6) NOT NULL DEFAULT 0,
+  `description` VARCHAR(75) NOT NULL DEFAULT 0,
   `prix` FLOAT NOT NULL DEFAULT 0,
+  `nom` VARCHAR(45) NULL DEFAULT NULL,
+  `prenom` VARCHAR(45) NULL DEFAULT NULL,
+  `telephone` DECIMAL(10) NULL DEFAULT NULL,
   `idCategorie` BIGINT NULL,
   PRIMARY KEY (`id`),
   CONSTRAINT `fk_produit_utilisateur`
