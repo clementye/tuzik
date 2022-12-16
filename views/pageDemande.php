@@ -9,27 +9,27 @@
         <form action="demande.php" method="post">
             <p>
                 <label for="titre">Titre :</label>
-                <input type="text" name="titre" id="titre" value="<?php echo $titre; ?>">
+                <input type="text" name="titre" id="titre">
             </p>
             <p>
                 <label for="description">Description :</label>
-                <input type="text" name="description" id="description" value="<?php echo $description; ?>">
+                <input type="text" name="description" id="description">
             </p>
             <p>
                 <label for="nom">Nom :</label>
-                <input type="text" name="nom" id="nom" value="<?php echo $nom; ?>">
+                <input type="text" name="nom" id="nom">
             </p>
             <p>
                 <label for="prenom">Prénom :</label>
-                <input type="text" name="prenom" id="prenom" value="<?php echo $prenom; ?>">
+                <input type="text" name="prenom" id="prenom">
             </p>
             <p>
                 <label for="telephone">Téléphone :</label>
-                <input type="text" name="telephone" id="telephone" value="<?php echo $telephone; ?>">
+                <input type="text" name="telephone" id="telephone">
             </p>
             <p>
                 <label for="prix">Prix :</label>
-                <input type="text" name="prix" id="prix" value="<?php echo $prix; ?>">
+                <input type="text" name="prix" id="prix">
             </p>
             <p>
                 <label for="photo">photo</label><br>

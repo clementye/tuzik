@@ -24,7 +24,7 @@
                   <li><a href="#!">Produit</a></li>
                   <li><a href="#!">Messagerie</a></li>
                   <li><a href="/controllers/espace_membres.php">Espace Membre</a></li>
-                  <li><a href="#!">Panier</a></li>
+                  <li><a href="/controllers/panier.php">Panier</a></li>
                   <li><a href="/controllers/demande.php">Ajouter un article</a></li>
 
                </ul>
