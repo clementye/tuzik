@@ -54,7 +54,6 @@ CREATE TABLE IF NOT EXISTS `TuZik?`.`profilMagasin` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-CREATE INDEX `fk_profilMagasin_utilisateur` ON `TuZik?`.`profilMagasin` (`utilisateur_id` ASC) VISIBLE;
 
 
 -- -----------------------------------------------------
@@ -77,7 +76,6 @@ CREATE TABLE IF NOT EXISTS `TuZik?`.`profil fabricant` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-CREATE INDEX `utilisateurid` ON `TuZik?`.`profil fabricant` (`utilisateurid` ASC) VISIBLE;
 
 
 -- -----------------------------------------------------
@@ -97,7 +95,6 @@ CREATE TABLE IF NOT EXISTS `TuZik?`.`categorie` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-CREATE INDEX `parentid` ON `TuZik?`.`categorie` (`parentId` ASC) VISIBLE;
 
 
 -- -----------------------------------------------------
@@ -125,9 +122,6 @@ CREATE TABLE IF NOT EXISTS `TuZik?`.`produit` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-CREATE INDEX `fk_produit_utilisateur` ON `TuZik?`.`produit` (`utilisateur_Id` ASC) VISIBLE;
-
-CREATE INDEX `idCategorie` ON `TuZik?`.`produit` (`idCategorie` ASC) VISIBLE;
 
 
 -- -----------------------------------------------------
@@ -153,9 +147,6 @@ CREATE TABLE IF NOT EXISTS `TuZik?`.`panier_objet` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-CREATE INDEX `fk_panier_objet_produit` ON `TuZik?`.`panier_objet` (`produitId` ASC) VISIBLE;
-
-CREATE INDEX `userId` ON `TuZik?`.`panier_objet` (`userId` ASC) VISIBLE;
 
 
 -- -----------------------------------------------------
@@ -177,7 +168,6 @@ CREATE TABLE IF NOT EXISTS `TuZik?`.`Commande` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
 
-CREATE INDEX `fk_Commande_utilisateur` ON `TuZik?`.`Commande` (`userId` ASC) VISIBLE;
 
 
 -- -----------------------------------------------------
@@ -202,9 +192,6 @@ CREATE TABLE IF NOT EXISTS `TuZik?`.`Commande_objet` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
 
-CREATE INDEX `fk_Commande_objet_produit` ON `TuZik?`.`Commande_objet` (`produitId` ASC) VISIBLE;
-
-CREATE INDEX `fk_Commande_objet_Commande` ON `TuZik?`.`Commande_objet` (`CommandeId` ASC) VISIBLE;
 
 
 -- -----------------------------------------------------
@@ -225,7 +212,6 @@ CREATE TABLE IF NOT EXISTS `TuZik?`.`paiement` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
 
-CREATE INDEX `fk_paiement_commande` ON `TuZik?`.`paiement` (`CommandeId` ASC) VISIBLE;
 
 
 -- -----------------------------------------------------
@@ -245,7 +231,6 @@ CREATE TABLE IF NOT EXISTS `TuZik?`.`photo_produit` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-CREATE INDEX `produitId_idx` ON `TuZik?`.`photo_produit` (`produitId` ASC) VISIBLE;
 
 
 SET SQL_MODE=@OLD_SQL_MODE;

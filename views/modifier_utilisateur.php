@@ -25,7 +25,7 @@
         <div class="texte"><label for="nom">Nom :</label>
         <input type="nom" id="nom" name="nom" /></div>
         <br />
-        <div class="texte" value="<?php echo $_SESSION["user-email"]; ?>"><label for="email">Email :</label>
+        <div class="texte"><label for="email" value="<?php echo $_SESSION["user-email"]; ?>">Email :</label>
         <input type="email" id="email" name="email" /></div>
         <br />
         <div class="texte"><label for="telephone">Téléphone :</label>

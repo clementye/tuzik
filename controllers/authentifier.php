@@ -2,7 +2,7 @@
 // Si l'email ou le mot de passe n'est pas spécifié
 if ($_POST["email"] == null or $_POST["password"] == null) {
 	// On prépare un message d'erreur.
-	$erreur = "<div class=texte >Veuillez saisir une email valide1.</div>";
+	$erreur = "<div class=texte >Veuillez saisir une email valide.</div>";
 	require_once "../views/accueil.php";
 } else {
 	// Sinon, on récupère les fonctions pour gérer un utilisateur (ajouter, récupérer)
@@ -15,7 +15,7 @@ if ($_POST["email"] == null or $_POST["password"] == null) {
 		$mail = $vérifier_mail($_POST["email"]);
 		if ($mail == true){
 			// si oui, on prépare un message d'erreur,
-			$erreur = "<div class=texte >Veuillez saisir une email valide2.</div>";
+			$erreur = "<div class=texte >Veuillez saisir une email valide.</div>";
 			require_once "../views/inscription.php";
 		} else {
 			$hashedPW = password_hash($_POST["password"], PASSWORD_BCRYPT);
@@ -51,7 +51,8 @@ if ($_POST["email"] == null or $_POST["password"] == null) {
 			$_SESSION["user-id"] = $utilisateur->id;
 			$_SESSION["user-email"] = $utilisateur->email;
 			$_SESSION["user-name"] = $nomUtilisateur;
-			require_once "../views/espace_personnel.php";
+			$_SESSION["user_statue"] = "Utilisateur normal"
+ 			require_once "../views/espace_personnel.php";
 		}
 	}
 }
