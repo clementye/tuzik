@@ -14,7 +14,7 @@ $afficher_fabriquant = function () use($db){
 	return $result;
 }
 
-$afficher_magasin_precis = function (string $uid){
+$afficher_magasin_precis = function (string $uid) use($db){
 	$statement = $db->prepare(
 		"SELECT id
 		FROM profilmagasin
@@ -25,7 +25,7 @@ $afficher_magasin_precis = function (string $uid){
 	return $result;
 }
 
-$ajouter_statue_utilisateur = function (string $numId){
+$ajouter_statue_utilisateur = function (string $numId) use($db){
 	if ($numId !== NULL){
 		$statement = $db -> prepare(
 			"UPDATE utilisateur SET 'Num Magasin' = ? WHERE email = ?;"

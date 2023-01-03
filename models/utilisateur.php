@@ -21,7 +21,7 @@ $ajouter_utilisateur = function (string $nom, string $prenom, string $tel, strin
 
 $recuperer_utilisateur = function (string $email) use($db) {
 	$statement = $db->prepare(
-		"SELECT id, email, motdepasse, Num Magasin, Num Fabricant
+		"SELECT id, email, motdepasse, NumMagasin, NumFabricant
 		FROM utilisateur
 		WHERE email = ?;"
 	);

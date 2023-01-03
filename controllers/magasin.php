@@ -5,7 +5,7 @@
 
     $ajouter_fabricant($_POST["adresse"], $_POST["nom"], $_POST["horaires"], $_SESSION["user-id"]);
     $utilisateur = $recuperer_utilisateur($_POST["email"]);
-    $ajouter_statue_utilisateur(, $utilisateur->'Num Magasin');
+    $ajouter_statue_utilisateur( $utilisateur->NumMagasin);
 
     $_SESSION["user-statue"] = "Gérant de magasin";
     $confirmation = "Votre magasin fut bien enregistré.";

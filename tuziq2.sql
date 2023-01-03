@@ -29,8 +29,8 @@ CREATE TABLE IF NOT EXISTS `TuZik?`.`utilisateur` (
   `telephone` VARCHAR(15) NULL DEFAULT NULL,
   `email` VARCHAR(50) NOT NULL,
   `motdepasse` VARCHAR(80) NOT NULL,
-  `Num Magasin` VARCHAR(45) NULL DEFAULT 0,
-  `Num Fabricant` VARCHAR(45) NULL DEFAULT 0,
+  `NumMagasin` VARCHAR(45) NULL DEFAULT 0,
+  `NumFabricant` VARCHAR(45) NULL DEFAULT 0,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
@@ -59,9 +59,9 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `TuZik?`.`profil fabricant`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `TuZik?`.`profil fabricant` ;
+DROP TABLE IF EXISTS `TuZik?`.`profilfabricant` ;
 
-CREATE TABLE IF NOT EXISTS `TuZik?`.`profilFabricant` (
+CREATE TABLE IF NOT EXISTS `TuZik?`.`profilfabricant` (
   `NumFabricant` INT NOT NULL auto_increment,
   `adresse` VARCHAR(45) NULL,
   `Nom` VARCHAR(45) NOT NULL,
