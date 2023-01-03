@@ -41,6 +41,7 @@ if ($_POST["email"] == null or $_POST["password"] == null) {
 			$erreur = "L'email ou le mot de passe n'est pas bon.";
 			require_once "../views/connexion.php";
 		} else {
+			require_once "../models/fabriquant.php"
 			$nomUtilisateur ='';
 			$finNomUtilisateur = strpos($_POST["email"], '@');
 			for ($i=0; $i < $finNomUtilisateur; $i++) {
@@ -51,7 +52,14 @@ if ($_POST["email"] == null or $_POST["password"] == null) {
 			$_SESSION["user-id"] = $utilisateur->id;
 			$_SESSION["user-email"] = $utilisateur->email;
 			$_SESSION["user-name"] = $nomUtilisateur;
-			$_SESSION["user_statue"] = "Utilisateur normal"
+			if ($utilisateur->'num magasin' > 0) { //Vérifie si le compte est un gérant de magasin
+				$_SESSION["user_statue"] = "Gérant de Magasin";
+			} else if ($utilisateur->'num fabricant' > 0) { // ou un fabricant
+				$_SESSION["user_statue"] = "Fabricant";
+			} else {
+				$_SESSION["user_statue"] = "Utilisateur normal";
+			}
+
  			require_once "../views/espace_personnel.php";
 		}
 	}

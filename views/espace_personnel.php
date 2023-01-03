@@ -42,8 +42,9 @@
 		} ?>
 		<br>
 	</br>
-		<h1>Bienvenu <?php echo $_SESSION["user-name"]; ?></h1>
-        <p>Vous êtes bien connecté.</p>
+		<h1>Espace Personnel</h1>
+		Bienvenu <?php echo $_SESSION["user-name"]; ?>
+		<?php echo "Vous êtes un ".$_SESSION["user-statue"] ?>
 				<a href="/views/modifier_utilisateur.php">Modifier compte</a><br>
 				<a href="/views/fabricant.php">Profil de fabriquant</a><br>
 				<a href="/views/inscription_magasin.php">Enregistrer un magasin</a><br>

@@ -5,7 +5,7 @@
 
     $ajouter_fabricant($_POST["adresse"], $_POST["nom"], $_POST["specialite"], $_POST["prix"], $_SESSION["user-id"]);
 
-    $_SESSION["user-statue"] = "Fabriquant";
+    $_SESSION["user-statue"] = "Fabricant";
     $confirmation = "Vos information de fabricant furent bien enregistrées.";
     require_once "../views/espace_personnel.php";
   } else {

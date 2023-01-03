@@ -14,5 +14,11 @@ $afficher_fabriquant = function (){
 	return $result;
 }
 
-
+$ajouter_statue_utilisateur = function (string $numId, string $uid){
+  if ($numId !== NULL){
+    $statement = $db -> prepare(
+      "UPDATE utilisateur SET 'Num Fabricant' = ? WHERE email = ?;"
+    );
+    $statement->execute([$numId, $uid]);}
+}
  ?>
