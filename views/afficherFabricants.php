@@ -44,10 +44,11 @@
     $fabricant = $afficher_fabricant();
     var_dump($fabricant);
     foreach ((array) $fabricant as $fab) {
-        echo $fab->Nom;
-        echo $fab->adresse;
-        echo $fab->specialite;
-        echo $fab->prix;
+        
+        echo $fab["Nom"];
+        echo $fab["specialite"];
+        echo $fab["prix"];
+        echo $fab["adresse"];
     }
     ?>
 

@@ -1,54 +1,32 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>Demande d'article</title>
-    </head>
-    <body>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
         <h1>Demande d'article</h1>
-        <form action="demande.php" method="post">
-            <p>
-                <label for="titre">Titre :</label>
-                <input type="text" name="titre" id="titre">
-            </p>
-            <p>
-                <label for="description">Description :</label>
-                <input type="text" name="description" id="description">
-            </p>
-            <p>
-                <label for="nom">Nom :</label>
-                <input type="text" name="nom" id="nom">
-            </p>
-            <p>
-                <label for="prenom">Prénom :</label>
-                <input type="text" name="prenom" id="prenom">
-            </p>
-            <p>
-                <label for="telephone">Téléphone :</label>
-                <input type="text" name="telephone" id="telephone">
-            </p>
-            <p>
-                <label for="prix">Prix :</label>
-                <input type="text" name="prix" id="prix">
-            </p>
-            <p>
-                <label for="photo">photo</label><br>
-                <input type="file" id="photo" name="photo"><br><br>
-            </p>
-            <p>
-                <input type="submit" value="Envoyer">
-            </p>
-        </form>
-        <?php
-        // Affichage des erreurs
-        if ($erreur != '') {
-            echo '<p class="erreur">' . $erreur . '</p>';
-        }
-        // Affichage du message de confirmation
-        if ($message != '') {
-            echo '<p class="message">' . $message . '</p>';
-        }
-        ?>
+        <form action="/controllers/demande.php" method="post">
+        <?php if (isset ($erreur)) {
+				echo $erreur;
+				echo "<br>";
+			} ?>
+                   Veuillez remplir le formulaire ci-dessous
+            
+            <br />
+			<div class="texte"><label for="nom">Titre :</label>
+			<input type="titre" id="titre" name="titre" /></div>
+			<br />
+			<div class="texte"><label for="categorie">Categorie :</label>
+			<input type="categorie" id="categorie" name="categorie" /></div>
+			<br />
+			<div class="texte"><label for="prix">Prix :</label>
+			<input type="prix" id="prix" name="prix" /></div>
+			<br />
+            <br>
+			<button name="action" value="Enregister">Enregister</button>
+		</form>
+		</div>
         <a href="/views/accueil.php">RETOUR</a>
     </body>
 </html>

@@ -1,75 +1,14 @@
 <?php
+  session_start();
+  if ($_POST["action"] == "Enregister") {
+    require_once "../models/ajoutArticle.php";
 
-// Vérification des droits d'accès
+    $ajouter_article($_POST["titre"], $_POST["categorie"], $_POST["prix"], $_SESSION["user-id"]);
 
-session_start();
-  if (isset($_SESSION["user-name"])) {
-    require_once "../views/pageDemande.php";
+    $confirmation = "Vos information de fabricant ont bien été enregistrées.";
+    require_once "../views/accueil.php";
   } else {
-    require_once "../views/connexion.php";
-}
-
-// Initialisation des variables
-$titre = '';
-$description = '';
-$photo = '';
-$nom = '';
-$prenom = '';
-$erreur = '';
-$telephone = '';
-$prix = '';
-
-// Traitement des données du formulaire
-if (isset($_POST['titre'])) {
-    // Récupération des données du formulaire
-    $titre = $_POST['titre'];
-    $description = $_POST['description'];
-    $photo = $_POST['photo'];
-    $nom = $_POST['nom'];
-    $prenom = $_POST['prenom'];
-    $prix = $_POST['prix'];
-    // Vérification des données
-    if ($titre == '') {
-        $erreur = 'Le titre est vide.<br>';
-    }
-    if ($description == '') {
-        $erreur = 'La description est vide.<br>';
-    }
-    if ($photo == '') {
-        $erreur = 'La photo est vide.<br>';
-    }
-    if ($nom == '') {
-        $erreur = 'Le nom est vide.<br>';
-    }
-    if ($prenom == '') {
-        $erreur = 'Le prénom est vide.<br>';
-    }
-    if ($telephone == '') {
-        $erreur = 'Le téléphone est vide.<br>';
-    }
-    if ($prix == '') {
-        $erreur = 'Le prix est vide.<br>';
-    }
-    // Si pas d'erreur, on insère les données dans la base de données
-    if ($erreur == '') {
-        // Connexion à la base de données
-        include '/models/connexion.php';
-        // Préparation de la requête
-        $requete = $bd->prepare('INSERT INTO article (titre, description, photo, nom, prenom, telephone, prix) VALUES (:titre, :description, :photo, :nom, :prenom, :telephone, :prix)');
-        // Exécution de la requête
-        $requete->execute(array(
-            'titre' => $titre,
-            'description' => $description,
-            'photo' => $photo,
-            'nom' => $nom,
-            'prenom' => $prenom,
-            'telephone' => $telephone,
-            'prix' => $prix,
-        ));
-        // Fermeture de la requête
-        $requete->closeCursor();
-        // Message de confirmation
-        $message = 'Votre demande a été enregistrée.';
-    }
-}
-?>
+    $erreur = "Erreur de connexion avec le serveur.";
+    require_once "../views/pageDemande.php";
+  }
+ ?>

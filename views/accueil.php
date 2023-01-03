@@ -25,7 +25,7 @@
                   <li><a href="#!">Messagerie</a></li>
                   <li><a href="/controllers/espace_membres.php">Espace Membre</a></li>
                   <li><a href="/controllers/panier.php">Panier</a></li>
-                  <li><a href="/controllers/demande.php">Ajouter un article</a></li>
+                  <li><a href="/views/pageDemande.php">Ajouter un article</a></li>
 
                </ul>
             </div>
