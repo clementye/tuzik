@@ -21,7 +21,7 @@
             <div class="menu-bar">
                <ul id="menu-items">
                   <li><a href="/views/accueil.php">Accueil</a></li>
-                  <li><a href="/controllers/afficherFabricants">Fabricants</a></li>
+                  <li><a href="/controllers/afficherFabricants.php">Fabricants</a></li>
                   <li><a href="#!">Messagerie</a></li>
                   <li><a href="/controllers/espace_membres.php">Espace Membre</a></li>
                   <li><a href="/controllers/panier.php">Panier</a></li>
@@ -37,21 +37,17 @@
          </div>
       </nav>
    </section>
+   
+   //afficher le fichier /models/fabricant.php
+    <?php 
+    require_once "../models/fabricant.php";
+    $fabricant = $afficher_fabricant();
+    var_dump($fabricant);
+    foreach ((array) $fabricant as $fab) {
+        echo "$fab";
+    }
+    ?>
 
-   <!--- page de bienvenue ----->
-   <section>
-      <div class="welcome">
-         <!---text ---->
-         <div class="text">
-            <h1>Musiciens ! rassemblez-vous !</h1>
-            <!----bouton ---->
-            <a href="#!">Explorer</a>
-         </div>
-         <!--- image---->
-         <div class="image">
-            <img src="/images/TUZIK(bckgrnd2).png" alt="image" />
-         </div>
-      </div>
 </body>
-
 </html>
+

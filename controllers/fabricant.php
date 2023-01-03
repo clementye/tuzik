@@ -6,10 +6,10 @@
     $ajouter_fabricant($_POST["adresse"], $_POST["nom"], $_POST["specialite"], $_POST["prix"], $_SESSION["user-id"]);
 
     $_SESSION["user-statue"] = "Fabriquant";
-    $confirmation = "Vos information de fabricant furent bien enregistrées.";
+    $confirmation = "Vos information de fabricant ont bien été enregistrées.";
     require_once "../views/espace_personnel.php";
   } else {
     $erreur = "Erreur de connexion avec le serveur.";
-    require_once "../views/fabriquant.php";
+    require_once "../views/fabricant.php";
   }
  ?>

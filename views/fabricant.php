@@ -28,6 +28,6 @@
 			<button name="action" value="Enregister">Enregister</button>
 		</form>
 		</div>
-    <a href="/views/espace_personnel.php">Retour</a>
+    <a href="/controllers/espace_membres.php">Retour</a>
   </body>
 </html>

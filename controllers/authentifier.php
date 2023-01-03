@@ -51,7 +51,7 @@ if ($_POST["email"] == null or $_POST["password"] == null) {
 			$_SESSION["user-id"] = $utilisateur->id;
 			$_SESSION["user-email"] = $utilisateur->email;
 			$_SESSION["user-name"] = $nomUtilisateur;
-			$_SESSION["user_statue"] = "Utilisateur normal"
+			$_SESSION["user_statue"] = "Utilisateur normal";
  			require_once "../views/espace_personnel.php";
 		}
 	}
