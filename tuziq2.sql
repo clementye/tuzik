@@ -98,19 +98,19 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `TuZik?`.`produit`
+-- Table `TuZik?`.`article`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `TuZik?`.`produit` ;
+DROP TABLE IF EXISTS `TuZik?`.`article` ;
 
-CREATE TABLE IF NOT EXISTS `TuZik?`.`produit` (
+CREATE TABLE IF NOT EXISTS `TuZik?`.`article` (
   `id` BIGINT NOT NULL AUTO_INCREMENT,
   `utilisateur_Id` BIGINT NOT NULL,
-  `Titre` VARCHAR(75) NOT NULL,
-  `type` SMALLINT(6) NOT NULL DEFAULT 0,
-  `prix` FLOAT NOT NULL DEFAULT 0,
-  `idCategorie` BIGINT NULL DEFAULT NULL,
+  `titre` VARCHAR(75) NOT NULL,
+  `categorie` VARCHAR(75) NOT NULL,
+  `prix` DECIMAL(65) NOT NULL,
+  `idCategorie` BIGINT NOT NULL,
   PRIMARY KEY (`id`),
-  CONSTRAINT `fk_produit_utilisateur`
+  CONSTRAINT `fk_article_utilisateur`
     FOREIGN KEY (`utilisateur_Id`)
     REFERENCES `TuZik?`.`utilisateur` (`id`)
     ON DELETE NO ACTION
@@ -131,13 +131,13 @@ DROP TABLE IF EXISTS `TuZik?`.`panier_objet` ;
 
 CREATE TABLE IF NOT EXISTS `TuZik?`.`panier_objet` (
   `id` BIGINT NOT NULL AUTO_INCREMENT,
-  `produitId` BIGINT NOT NULL,
+  `articleId` BIGINT NOT NULL,
   `userId` BIGINT NOT NULL,
   `quantite` FLOAT NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`),
-  CONSTRAINT `fk_panier_objet_produit`
-    FOREIGN KEY (`produitId`)
-    REFERENCES `TuZik?`.`produit` (`id`)
+  CONSTRAINT `fk_panier_objet_article`
+    FOREIGN KEY (`articleId`)
+    REFERENCES `TuZik?`.`article` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `userId`
@@ -177,13 +177,13 @@ DROP TABLE IF EXISTS `TuZik?`.`Commande_objet` ;
 
 CREATE TABLE IF NOT EXISTS `TuZik?`.`Commande_objet` (
   `id` BIGINT NOT NULL AUTO_INCREMENT,
-  `produitId` BIGINT NOT NULL,
+  `articleId` BIGINT NOT NULL,
   `CommandeId` BIGINT NOT NULL,
   `quantité` FLOAT NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`),
-  CONSTRAINT `fk_Commande_objet_produit`
-    FOREIGN KEY (`produitId`)
-    REFERENCES `TuZik?`.`produit` (`id`)
+  CONSTRAINT `fk_Commande_objet_article`
+    FOREIGN KEY (`articleId`)
+    REFERENCES `TuZik?`.`article` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Commande_objet_Commande`
@@ -215,18 +215,18 @@ CREATE TABLE IF NOT EXISTS `TuZik?`.`paiement` (
 
 
 -- -----------------------------------------------------
--- Table `TuZik?`.`photo_produit`
+-- Table `TuZik?`.`photo_article`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `TuZik?`.`photo_produit` ;
+DROP TABLE IF EXISTS `TuZik?`.`photo_article` ;
 
-CREATE TABLE IF NOT EXISTS `TuZik?`.`photo_produit` (
+CREATE TABLE IF NOT EXISTS `TuZik?`.`photo_article` (
   `id` BIGINT NOT NULL,
-  `produitId` BIGINT NOT NULL,
+  `articleId` BIGINT NOT NULL,
   `image` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id`),
-  CONSTRAINT `produitId`
-    FOREIGN KEY (`produitId`)
-    REFERENCES `TuZik?`.`produit` (`id`)
+  CONSTRAINT `articleId`
+    FOREIGN KEY (`articleId`)
+    REFERENCES `TuZik?`.`article` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
