@@ -41,7 +41,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `TuZik?`.`profilMagasin` ;
 
 CREATE TABLE IF NOT EXISTS `TuZik?`.`profilMagasin` (
-  `NumMagasin` INT NOT NULL,
+  `NumMagasin` INT NOT NULL auto_increment,
   `adresse` VARCHAR(45) NOT NULL,
   `nom` VARCHAR(45) NOT NULL,
   `horaires` VARCHAR(45) NOT NULL,
@@ -61,11 +61,11 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `TuZik?`.`profil fabricant` ;
 
-CREATE TABLE IF NOT EXISTS `TuZik?`.`profil fabricant` (
-  `NumFabricant` INT NOT NULL,
+CREATE TABLE IF NOT EXISTS `TuZik?`.`profilFabricant` (
+  `NumFabricant` INT NOT NULL auto_increment,
   `adresse` VARCHAR(45) NULL,
   `Nom` VARCHAR(45) NOT NULL,
-  `spécialité` VARCHAR(45) NULL DEFAULT NULL,
+  `specialite` VARCHAR(45) NULL DEFAULT NULL,
   `prix` FLOAT NULL DEFAULT NULL,
   `utilisateurid` BIGINT NOT NULL,
   PRIMARY KEY (`NumFabricant`),

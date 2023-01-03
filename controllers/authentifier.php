@@ -41,7 +41,7 @@ if ($_POST["email"] == null or $_POST["password"] == null) {
 			$erreur = "L'email ou le mot de passe n'est pas bon.";
 			require_once "../views/connexion.php";
 		} else {
-			require_once "../models/fabriquant.php"
+			require_once "../models/fabriquant.php";
 			$nomUtilisateur ='';
 			$finNomUtilisateur = strpos($_POST["email"], '@');
 			for ($i=0; $i < $finNomUtilisateur; $i++) {
