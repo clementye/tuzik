@@ -9,7 +9,8 @@ $ajouter_fabricant = function (string $adresse, string $nom, string $specialite,
 };
 
 $afficher_fabricant = function() use($db){
-  $statement = $db->prepare("SELECT Nom, specialite, adresse, prix FROM profilfabricant");
+  $statement = $db->prepare("SELECT Nom, specialite, adresse, prix FROM profilfabricant;");
+	$statement->execute();
 	$result = $statement->fetch(PDO::FETCH_OBJ);
 	return $result;
 };

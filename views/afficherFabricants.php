@@ -37,14 +37,13 @@
          </div>
       </nav>
    </section>
-   
+
    //afficher le fichier /models/fabricant.php
-    <?php 
+    <?php
     require_once "../models/fabricant.php";
     $fabricant = $afficher_fabricant();
     var_dump($fabricant);
     foreach ((array) $fabricant as $fab) {
-        
         echo $fab["Nom"];
         echo $fab["specialite"];
         echo $fab["prix"];
@@ -54,4 +53,3 @@
 
 </body>
 </html>
-
