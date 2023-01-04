@@ -12,6 +12,7 @@ $afficher_fabricant = function() use($db){
   $statement = $db->prepare("SELECT Nom, specialite, adresse, prix FROM profilfabricant;");
 	$statement->execute();
 	$result = $statement->fetch(PDO::FETCH_OBJ);
+  var_dump($result);
 	return $result;
 };
 

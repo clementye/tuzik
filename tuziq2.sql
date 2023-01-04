@@ -107,7 +107,7 @@ CREATE TABLE IF NOT EXISTS `TuZik?`.`article` (
   `utilisateur_Id` BIGINT NOT NULL,
   `titre` VARCHAR(75) NOT NULL,
   `categorie` VARCHAR(75) NOT NULL,
-  `prix` DECIMAL(65) NOT NULL,
+  `prix` FLOAT NULL DEFAULT NULL,
   `idCategorie` BIGINT NOT NULL,
   PRIMARY KEY (`id`),
   CONSTRAINT `fk_article_utilisateur`
