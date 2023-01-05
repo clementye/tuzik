@@ -14,7 +14,7 @@
                    Veuillez remplir le formulaire ci-dessous
             
             <br />
-			<div class="texte"><label for="nom">Titre :</label>
+			<div class="texte"><label for="titre">Titre :</label>
 			<input type="titre" id="titre" name="titre" /></div>
 			<br />
 			<div class="texte"><label for="categorie">Categorie :</label>

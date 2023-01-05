@@ -41,13 +41,14 @@
     <?php 
     require_once "../models/fabricant.php";
     $fabricant = $afficher_fabricant();
-    var_dump($fabricant);
     foreach ($fabricant as $fab) {
-        
-        echo $fab["Nom"];
-        echo $fab["specialite"];
-        echo $fab["prix"];
-        echo $fab["adresse"];
+      
+        echo $fab->Nom." "."<br>";
+         echo $fab->specialite." "."<br>";
+         echo $fab->adresse." "."<br>";
+         echo $fab->prix." "."<br>";
+         echo "<br>";
+
     }
     ?>
 

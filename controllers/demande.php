@@ -4,8 +4,7 @@
     require_once "../models/ajoutArticle.php";
 
     $ajouter_article($_POST["titre"], $_POST["categorie"], $_POST["prix"], $_SESSION["user-id"]);
-
-    $_SESSION["user-statue"] = "article";
+    
     $confirmation = "Vos information de fabricant ont bien été enregistrées.";
     require_once "../views/accueil.php";
   } else {
