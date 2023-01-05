@@ -8,11 +8,14 @@
         <h1>Demande d'article</h1>
         <form action="/controllers/demande.php" method="post">
         <?php if (isset ($erreur)) {
-				echo $erreur;
-				echo "<br>";
-			} ?>
+				echo $erreur."<br>";
+			}
+
+      if (isset($confirmation)){
+        echo $confirmation."<br>";
+      } ?>
                    Veuillez remplir le formulaire ci-dessous
-            
+
             <br />
 			<div class="texte"><label for="titre">Titre :</label>
 			<input type="titre" id="titre" name="titre" /></div>

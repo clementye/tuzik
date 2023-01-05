@@ -83,7 +83,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `TuZik?`.`produit`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `TuZik?`.`produit` (
+CREATE TABLE IF NOT EXISTS `TuZik?`.`article` (
   `id` BIGINT NOT NULL AUTO_INCREMENT,
   `utilisateur_Id` BIGINT NOT NULL,
   `Titre` VARCHAR(75) NOT NULL,
@@ -115,7 +115,7 @@ CREATE TABLE IF NOT EXISTS `TuZik?`.`panier_objet` (
   PRIMARY KEY (`id`),
   CONSTRAINT `fk_panier_objet_produit`
     FOREIGN KEY (`produitId`)
-    REFERENCES `TuZik?`.`produit` (`id`)
+    REFERENCES `TuZik?`.`article` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `userId`
@@ -155,7 +155,7 @@ CREATE TABLE IF NOT EXISTS `TuZik?`.`Commande_objet` (
   PRIMARY KEY (`id`),
   CONSTRAINT `fk_Commande_objet_produit`
     FOREIGN KEY (`produitId`)
-    REFERENCES `TuZik?`.`produit` (`id`)
+    REFERENCES `TuZik?`.`article` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Commande_objet_Commande`
@@ -192,7 +192,7 @@ CREATE TABLE IF NOT EXISTS `TuZik?`.`photo_produit` (
   PRIMARY KEY (`id`),
   CONSTRAINT `produitId`
     FOREIGN KEY (`produitId`)
-    REFERENCES `TuZik?`.`produit` (`id`)
+    REFERENCES `TuZik?`.`article` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
