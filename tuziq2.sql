@@ -27,8 +27,8 @@ CREATE TABLE IF NOT EXISTS `TuZik?`.`utilisateur` (
   `telephone` VARCHAR(15) NULL DEFAULT NULL,
   `email` VARCHAR(50) NOT NULL,
   `motdepasse` VARCHAR(80) NOT NULL,
-  `Num Magasin` VARCHAR(45) NULL DEFAULT 0,
-  `Num Fabricant` VARCHAR(45) NULL DEFAULT 0,
+  `NumMagasin` VARCHAR(45) NULL DEFAULT 0,
+  `NumFabricant` VARCHAR(45) NULL DEFAULT 0,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
@@ -36,7 +36,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `TuZik?`.`profilMagasin`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `TuZik?`.`profilMagasin` (
+CREATE TABLE IF NOT EXISTS `TuZik?`.`profilmagasin` (
   `NumMagasin` INT NOT NULL,
   `adresse` VARCHAR(45) NOT NULL,
   `nom` VARCHAR(45) NOT NULL,
@@ -54,11 +54,11 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `TuZik?`.`profil fabricant`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `TuZik?`.`profil fabricant` (
+CREATE TABLE IF NOT EXISTS `TuZik?`.`profilfabricant` (
   `NumFabricant` INT NOT NULL,
   `adresse` VARCHAR(45) NULL,
   `Nom` VARCHAR(45) NOT NULL,
-  `spécialité` VARCHAR(45) NULL DEFAULT NULL,
+  `specialite` VARCHAR(45) NULL DEFAULT NULL,
   `prix` FLOAT NULL DEFAULT NULL,
   `utilisateurid` BIGINT NOT NULL,
   PRIMARY KEY (`NumFabricant`),
@@ -151,7 +151,7 @@ CREATE TABLE IF NOT EXISTS `TuZik?`.`Commande_objet` (
   `id` BIGINT NOT NULL AUTO_INCREMENT,
   `produitId` BIGINT NOT NULL,
   `CommandeId` BIGINT NOT NULL,
-  `quantité` FLOAT NOT NULL DEFAULT 0,
+  `quantite` FLOAT NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`),
   CONSTRAINT `fk_Commande_objet_produit`
     FOREIGN KEY (`produitId`)
@@ -189,7 +189,7 @@ CREATE TABLE IF NOT EXISTS `TuZik?`.`photo_produit` (
   `id` BIGINT NOT NULL,
   `produitId` BIGINT NOT NULL,
   `image` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`id`),
+  PRIMARY KEY (`id`),
   CONSTRAINT `produitId`
     FOREIGN KEY (`produitId`)
     REFERENCES `TuZik?`.`produit` (`id`)
