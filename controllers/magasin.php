@@ -1,5 +1,6 @@
 <?php
   session_start();
+  require_once "../views/magasin.php";
   if ($_POST["action"] == "Enregister") {
     require_once "../models/magasin.php";
 

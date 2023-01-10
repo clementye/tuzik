@@ -15,20 +15,22 @@
 				echo "<br>";
 			} ?>
             <h1 class="texte">Inscription</h1>
+            Entrez les informations de votre magasin.
             <br />
+            <br />
+            <div class="texte"><label for="nom">Nom :</label>
+      			<input type="nom" id="nom" name="nom" /></div>
+      			<br />
             <div class="texte"><label for="adresse">Adresse :</label>
-			<input type="adresse" id="adresse" name="adresse" /></div>
+			           <input type="adresse" id="adresse" name="adresse" /></div>
             <br />
-			<div class="texte"><label for="nom">Nom :</label>
-			<input type="nom" id="nom" name="nom" /></div>
-			<br />
-			<div class="texte"><label for="prix">Horaires:</label>
-			<input type="prix" id="prix" name="prix" /></div>
-			<br />
+			      <div class="texte"><label for="prix">Horaires:</label>
+			      <input type="prix" id="prix" name="prix" /></div>
+			      <br />
             <br>
 			<button name="action" value="Enregister">Enregister</button>
 		</form>
 		</div>
-    <a href="/views/espace_personnel.php">Retour</a>
+    <a href="/controllers/espace_membres.php">Retour</a>
   </body>
 </html>

@@ -60,7 +60,7 @@ $recuperer_utilisateur = function (string $email) use($db) {
 
 	$supprimer_compte = function (string $email) use ($db){
 		$statement = $db->prepare(
-			"DELETE FROM utilisateur WHERE email;"
+			"DELETE FROM utilisateur WHERE email=?;"
 		);
 		$statement->execute([$email]);
 	}
