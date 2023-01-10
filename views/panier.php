@@ -1,5 +1,4 @@
 <?php
-
 // Tableau pour stocker les produits dans le panier
 $panier = array();
 

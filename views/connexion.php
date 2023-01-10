@@ -50,7 +50,7 @@ background: url("/images/TUZIK(bckgrnd2).png") no-repeat center center fixed;
       <br />
 			<button name="action" value="sign-up">Se connecter</button>
       <br />
-      <a href="/views/inscription.php">Pas encore inscrit ?</a>
+      <a style="color:aliceblue" href="/views/inscription.php">Pas encore inscrit ?</a>
 		</form>
 		</div>
 		<?php if (isset ($confirmation)) {

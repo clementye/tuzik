@@ -54,11 +54,11 @@ if ($_POST["email"] == null or $_POST["password"] == null) {
 			$_SESSION["user-email"] = $utilisateur->email;
 			$_SESSION["user-name"] = $nomUtilisateur;
 			if ($status1 >= 1) { //Vérifie si le compte est un gérant de magasin
-				$_SESSION["user-statue"] = "Gérant de Magasin";
+				$_SESSION["user-statue"] = "Magasin";
 			} else if ($status2 >= 1) { // ou un fabricant
 				$_SESSION["user-statue"] = "Fabricant";
 			} else {
-				$_SESSION["user-statue"] = "Utilisateur normal";
+				$_SESSION["user-statue"] = "de Particulier";
 			}
 
  			require_once "../views/espace_personnel.php";

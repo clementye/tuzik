@@ -6,11 +6,15 @@
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <title>Tuzik ?</title>
    <link rel="stylesheet" href="/models/style.css">
+   <style>
+         body {
+            background-color: #EFEFEF;}
+      </style>
 </head>
 
 <body>
    <!-- barre de navigation ---->
-   <section>
+   <section style="background-color: #FFFFFF;">
       <nav>
          <div class="nav-bar">
             <!--- logo --->
@@ -43,7 +47,7 @@
       <div class="welcome">
          <!---text ---->
          <div class="text">
-            <h1>Musiciens ! rassemblez-vous !</h1>
+            <h1>Musiciens ! Rassemblez-vous !</h1>
             <!----bouton ---->
             <a href="#!">Explorer</a>
          </div>

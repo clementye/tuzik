@@ -4,13 +4,18 @@
 		<meta charset="utf-8">
 		<title>Accueil</title>
 		<link rel="stylesheet" href="/models/style.css">
+      <style>
+         body {
+            background-color: #EFEFEF;}
+         text {
+            display: flex;
+            flex-direction: column;
+          text-align: center;
+         }
+      </style>
 	</head>
 	<body>
-		<?php if (isset ($confirmation)) {
-			echo $confirmation;
-		} ?>
-
-		<section>
+		<section style="background-color: #FFFFFF;">
       <nav>
          <div class="nav-bar">
             <!--- logo --->
@@ -20,12 +25,12 @@
             <!---- barre de navigation---->
             <div class="menu-bar">
                <ul id="menu-items">
-                  <li><a href="/views/accueil.php">Accueil</a></li>
-                  <li><a href="#!">Produit</a></li>
+               <li><a href="/views/accueil.php">Accueil</a></li>
+                  <li><a href="/controllers/afficherFabricants">Fabricants</a></li>
                   <li><a href="#!">Messagerie</a></li>
                   <li><a href="/controllers/espace_membres.php">Espace Membre</a></li>
                   <li><a href="/controllers/panier.php">Panier</a></li>
-                  <li><a href="/controllers/demande.php">Ajouter un article</a></li>
+                  <li><a href="/views/pageDemande.php">Ajouter un article</a></li>
 
                </ul>
             </div>
@@ -37,18 +42,21 @@
          </div>
       </nav>
    </section>
-		<?php if (isset ($confirmation)) {
-			echo $confirmation;
-		} ?>
-		<br>
+	<text>
+   <br>
 	</br>
 		<h1>Espace Personnel</h1>
-		Bienvenu <?php echo $_SESSION["user-name"]; ?>
-		<?php echo "Vous êtes un ".$_SESSION["user-statue"] ?>
+		<h1>Bienvenue <?php echo $_SESSION["user-name"]; ?> </h1>
+		<?php echo "Vous avez un profil ".$_SESSION["user-statue"] ?> 
 				<a href="/views/modifier_utilisateur.php">Modifier compte</a><br>
 				<a href="/views/fabricant.php">Profil de fabriquant</a><br>
 				<a href="/views/inscription_magasin.php">Enregistrer un magasin</a><br>
 				<a href="/controllers/deconnexion.php">Déconnexion</a><br>
-
+            <br>
+	</br>
+            <?php if (isset ($confirmation)) {
+			echo $confirmation;
+		} ?>
+   </text>
 	</body>
 </html>

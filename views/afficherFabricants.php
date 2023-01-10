@@ -6,11 +6,37 @@
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <title>Tuzik ?</title>
    <link rel="stylesheet" href="/models/style.css">
+   <style>
+      body {
+         background-color: #EFEFEF;
+      }
+      table {
+         margin-left: auto;
+         margin-right: 10%;  
+         margin-top: 0%; 
+         border-collapse: collapse;
+      }
+      th, td{
+      border: 1px solid black;
+      padding: 10px;
+      }
+      p {
+         display: flex;
+         flex-direction: row;
+         text-align: center;
+      }
+     
+      img {
+         margin-left: 10%;
+         margin-top: 5%;
+
+            }
+   </style>
 </head>
 
 <body>
    <!-- barre de navigation ---->
-   <section>
+   <section style="background-color: #FFFFFF;">
       <nav>
          <div class="nav-bar">
             <!--- logo --->
@@ -37,20 +63,32 @@
          </div>
       </nav>
    </section>
-   
-    <?php 
+   <parent>
+   <img src="/images/luthier.png">
+   <table  border="1" cellpading="7" width=50% bgcolor=#18257190>
+      
+      <tr>
+         <th>Nom</th>
+         <th>Specialite</th>
+         <th>Adresse</th>
+         <th>Prix</th>
+      </tr>
+     
+   <?php 
     require_once "../models/fabricant.php";
     $fabricant = $afficher_fabricant();
     foreach ($fabricant as $fab) {
-      
-        echo $fab->Nom." "."<br>";
-         echo $fab->specialite." "."<br>";
-         echo $fab->adresse." "."<br>";
-         echo $fab->prix." "."<br>";
-         echo "<br>";
+      echo '
+      <tr>
+      <th>'. $fab->Nom." "."</th>
+      <th> ". $fab->specialite." "."</th>
+      <th> ". $fab->adresse." "."</th>
+      <th> ". $fab->prix." "."</th>
+      </tr> ";
 
-    }
-    ?>
-
+  }
+   ?>
+    </table>   
+   </parent>
 </body>
 </html>

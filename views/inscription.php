@@ -60,10 +60,11 @@ background: url("/images/TUZIK\(bckgrnd2\).png") no-repeat center center fixed;
 			<input type="tel" id="tel" name="tel" /></div>
             <br />
             <br>
-			<button name="action" value="sign-in">S'inscrire</button>
+			<button name="action" value="sign-in">S'inscrire</button> <br>
+      <a style="color:aliceblue" href="/views/connexion.php">Déjà inscrit ?</a> </br>
 		</form>
 		</div>
-    <a href="/views/connexion.php">Déjà inscrit ?</a>
+    
 		<?php if (isset ($confirmation)) {
 			echo $confirmation;
 		} ?>

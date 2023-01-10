@@ -3,6 +3,10 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+	<style>
+         body {
+            background-color: #EFEFEF;}
+      </style>
   </head>
   <body>
         <h1>Demande d'article</h1>
