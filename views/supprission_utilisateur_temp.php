@@ -8,6 +8,7 @@
     Êtes-vous sûr?
     <form action="/controllers/suppression_utilisateur.php" method="post">
 			<button name="action" value="Confirmer">Oui</button>
-      <button name="action" value="Annuler">Non</button>
+      </form>
+      <a href="../controllers/espace_membres.php">Non</a>
   </body>
 </html>

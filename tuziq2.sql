@@ -40,7 +40,7 @@ ENGINE = InnoDB;
 -- Table `TuZik?`.`profilmagasin`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `TuZik?`.`profilmagasin` (
-  `NumMagasin` INT NOT NULL,
+  `NumMagasin` INT NOT NULL AUTO_INCREMENT,
   `adresse` VARCHAR(45) NOT NULL,
   `nom` VARCHAR(45) NOT NULL,
   `horaires` VARCHAR(45) NOT NULL,
@@ -58,7 +58,7 @@ ENGINE = InnoDB;
 -- Table `TuZik?`.`profilfabricant`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `TuZik?`.`profilfabricant` (
-  `NumFabricant` INT NOT NULL,
+  `NumFabricant` INT NOT NULL AUTO_INCREMENT,
   `adresse` VARCHAR(45) NULL DEFAULT NULL,
   `Nom` VARCHAR(45) NOT NULL,
   `specialite` VARCHAR(45) NULL DEFAULT NULL,

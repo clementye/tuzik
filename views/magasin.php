@@ -24,8 +24,8 @@
             <div class="texte"><label for="adresse">Adresse :</label>
 			           <input type="adresse" id="adresse" name="adresse" /></div>
             <br />
-			      <div class="texte"><label for="prix">Horaires:</label>
-			      <input type="prix" id="prix" name="prix" /></div>
+			      <div class="texte"><label for="horaires">Horaires:</label>
+			      <input type="horaires" id="horaires" name="horaires" /></div>
 			      <br />
             <br>
 			<button name="action" value="Enregister">Enregister</button>

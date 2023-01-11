@@ -14,10 +14,21 @@ $afficher_fabricant = function() use($db){
 	return $result;
 };
 
+$afficher_fabricant_precis = function (string $name) use($db){
+	$statement = $db->prepare(
+		"SELECT NumFabricant
+		FROM profilfabricant
+		WHERE Nom = ?;"
+	);
+	$statement->execute([$name]);
+	$result = $statement->fetch(PDO::FETCH_OBJ);
+	return $result;
+};
+
 $ajouter_statue_utilisateur = function (string $numId, string $uid) use($db){
   if ($numId !== NULL){
     $statement = $db -> prepare(
-      "UPDATE utilisateur SET 'Num Fabricant' = ? WHERE email = ?;"
+      "UPDATE utilisateur SET NumFabricant = ? WHERE email = ?;"
     );
     $statement->execute([$numId, $uid]);}
 }

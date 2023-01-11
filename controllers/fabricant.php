@@ -4,6 +4,8 @@
     require_once "../models/fabricant.php";
 
     $ajouter_fabricant($_POST["adresse"], $_POST["nom"], $_POST["specialite"], $_POST["prix"], $_SESSION["user-id"]);
+    $fabricant = $afficher_fabricant_precis($_POST["nom"]);
+    $ajouter_statue_utilisateur($fabricant->NumFabricant, $_SESSION["user-email"]);
 
     $_SESSION["user-statue"] = "Fabriquant";
     $confirmation = "Vos information de fabricant ont bien été enregistrées.";
