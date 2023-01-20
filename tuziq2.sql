@@ -116,7 +116,6 @@ CREATE TABLE IF NOT EXISTS `TuZik?`.`panier_article` (
   `userId` BIGINT NOT NULL,
   `quantite` FLOAT NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`),
-  INDEX `userId` (`userId` ASC) VISIBLE,
   CONSTRAINT `fk_panier_objet_produit`
     FOREIGN KEY (`produitId`)
     REFERENCES `TuZik?`.`article` (`id`)
