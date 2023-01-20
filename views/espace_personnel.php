@@ -27,6 +27,7 @@
 		<?php echo "Vous avez un profil ".$_SESSION["user-statue"] ?>
 				<a href="/views/modifier_utilisateur.php">Modifier compte</a><br>
 				<a href="/views/fabricant.php">Profil de fabriquant</a><br>
+            <a href="/views/musicien.php">Profil de musicien</a><br>
 				<a href="/views/magasin.php">Enregistrer un magasin</a><br>
 				<a href="/controllers/deconnexion.php">Déconnexion</a><br>
 				<a href="/views/supprission_utilisateur_temp.php">Supprimer mon compte</a>

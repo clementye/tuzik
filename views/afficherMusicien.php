@@ -80,7 +80,7 @@
     foreach ($musicien as $mus) {
       echo '
       <tr>
-      <th>'. $mus->nom." "."</th>
+      <th>'. $mus->Nom." "."</th>
       <th> ". $mus->niveau." "."</th>
       <th> ". $mus->adresse." "."</th>
       <th> ". $mus->instrument." "."</th>

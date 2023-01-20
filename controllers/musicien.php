@@ -3,7 +3,7 @@
   if ($_POST["action"] == "Enregister") {
     require_once "../models/musicien.php";
 
-    $ajouter_musicien($_POST["adresse"], $_POST["Nom"], $_POST["instrument"], $_POST["niveau"], $_SESSION["user-id"]);
+    $ajouter_musicien($_POST["adresse"], $_POST["instrument"], $_POST["niveau"], $_POST["description"], $_SESSION["user-id"]);
 
     $_SESSION["user-statue"] = "Musicien";
     $confirmation = "Vos information de musicien ont bien été enregistrées.";

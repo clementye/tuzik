@@ -11,8 +11,24 @@
 
 </head>
 <body>
-   
-<?php include '../models/header.php'; ?>
+   <!-- barre de navigation ---->
+   <section style="background-color: #FFFFFF;">
+      <nav>
+         <div class="nav-bar">
+            <!--- logo --->
+            <div class="logo">
+               <img src="/images/newtuzik.png" alt="" />
+            </div>
+            <!---- barre de navigation---->
+            <div class="menu-bar">
+               <ul id="menu-items">
+                  <li><a href="/views/accueil.php">Accueil</a></li>
+                  <li><a href="/controllers/afficherFabricants">Fabricants</a></li>
+                  <li><a href="/controllers/afficherMusicien">Musiciens</a></li>
+                  <li><a href="#!">Messagerie</a></li>
+                  <li><a href="/controllers/espace_membres.php">Espace Membre</a></li>
+                  <li><a href="/controllers/panier.php">Panier</a></li>
+                  <li><a href="/views/pageDemande.php">Ajouter un article</a></li>
 
 <div class="accueil-bg">
 
