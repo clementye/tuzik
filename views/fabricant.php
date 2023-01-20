@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="fr" dir="ltr">
   <head>
     <meta charset="utf-8">
     <title></title>
@@ -25,7 +25,7 @@
 			<div class="texte"><label for="specialite">Specialite :</label>
 			<input type="specialite" id="specialite" name="specialite" /></div>
 			<br />
-			<div class="texte"><label for="prix">Prx horaire:</label>
+			<div class="texte"><label for="prix">Prix horaire:</label>
 			<input type="prix" id="prix" name="prix" /></div>
 			<br />
             <br>

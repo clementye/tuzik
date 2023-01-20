@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="fr" dir="ltr">
   <head>
     <meta charset="utf-8">
     <title></title>
@@ -22,12 +22,11 @@
           echo "<br>";
         } ?>
               <h1 class="texte">Modifier information utilisateur</h1>
-              <br />
-        <div class="texte"><label for="prenom">Prénom :</label>
-        <input type="prenom" id="prenom" name="prenom" /></div>
-        <br />
         <div class="texte"><label for="nom">Nom :</label>
         <input type="nom" id="nom" name="nom" /></div>
+        <br />
+        <div class="texte"><label for="prenom">Prénom :</label>
+        <input type="prenom" id="prenom" name="prenom" /></div>
         <br />
         <div class="texte"><label for="email" value="<?php echo $_SESSION["user-email"]; ?>">Email :</label>
         <input type="email" id="email" name="email" /></div>

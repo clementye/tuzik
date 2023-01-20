@@ -25,9 +25,7 @@ USE `TuZik?` ;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `TuZik?`.`utilisateur` (
   `id` BIGINT NOT NULL AUTO_INCREMENT,
-  `Nom` VARCHAR(50) NULL DEFAULT NULL,
-  `Prenom` VARCHAR(50) NULL DEFAULT NULL,
-  `telephone` VARCHAR(15) NULL DEFAULT NULL,
+  `nom` VARCHAR(50) NULL DEFAULT NULL,
   `email` VARCHAR(50) NOT NULL,
   `motdepasse` VARCHAR(80) NOT NULL,
   `NumMagasin` VARCHAR(45) NULL DEFAULT 0,
@@ -73,40 +71,59 @@ CREATE TABLE IF NOT EXISTS `TuZik?`.`profilfabricant` (
 ENGINE = InnoDB;
 
 
--- -----------------------------------------------------
--- Table `TuZik?`.`categorie`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `TuZik?`.`categorie` (
-  `id` BIGINT NOT NULL AUTO_INCREMENT,
-  `Titre` VARCHAR(75) NOT NULL,
-  PRIMARY KEY (`id`))
-ENGINE = InnoDB;
+CREATE TABLE `panier` (
+  `id` int(100) NOT NULL,
+  `utilisateur_id` int(100) NOT NULL,
+  `pid` int(100) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `prix` int(10) NOT NULL,
+  `quantity` int(10) NOT NULL,
+  `image` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `commandes`
+--
+
+CREATE TABLE `commandes` (
+  `id` int(100) NOT NULL,
+  `utilisateur_id` int(100) NOT NULL,
+  `name` varchar(20) NOT NULL,
+  `téléphone` varchar(10) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `method` varchar(50) NOT NULL,
+  `adresse` varchar(500) NOT NULL,
+  `total_produits` varchar(1000) NOT NULL,
+  `total_prix` int(100) NOT NULL,
+  `payment_status` varchar(20) NOT NULL DEFAULT 'pending'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `produits`
+--
+
+CREATE TABLE `produits` (
+  `id` int(100) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `details` varchar(500) NOT NULL,
+  `prix` int(10) NOT NULL,
+  `image_01` varchar(100) NOT NULL,
+  `image_02` varchar(100) NOT NULL,
+  `image_03` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
--- -----------------------------------------------------
--- Table `TuZik?`.`article`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `TuZik?`.`article` (
-  `id` BIGINT NOT NULL AUTO_INCREMENT,
-  `utilisateur_Id` BIGINT NOT NULL,
-  `Titre` VARCHAR(75) NOT NULL,
-  `quantite` FLOAT NOT NULL DEFAULT 0,
-  `prix` FLOAT NOT NULL DEFAULT 0,
-  `idCategorie` BIGINT NULL DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  CONSTRAINT `fk_produit_utilisateur`
-    FOREIGN KEY (`utilisateur_Id`)
-    REFERENCES `TuZik?`.`utilisateur` (`id`)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE,
-  CONSTRAINT `idCategorie`
-    FOREIGN KEY (`idCategorie`)
-    REFERENCES `TuZik?`.`categorie` (`id`)
-    ON DELETE SET NULL
-    ON UPDATE CASCADE)
-ENGINE = InnoDB;
+-- --------------------------------------------------------
 
+--
+-- Table structure for table `liste_de_souhaits`
+--
 
+<<<<<<< Updated upstream
 -- -----------------------------------------------------
 -- Table `TuZik?`.`panier_article`
 -- -----------------------------------------------------
@@ -127,79 +144,62 @@ CREATE TABLE IF NOT EXISTS `TuZik?`.`panier_article` (
     ON DELETE CASCADE
     ON UPDATE CASCADE)
 ENGINE = InnoDB;
+=======
+CREATE TABLE `liste_de_souhaits` (
+  `id` int(100) NOT NULL,
+  `utilisateur_id` int(100) NOT NULL,
+  `pid` int(100) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `prix` int(100) NOT NULL,
+  `image` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+>>>>>>> Stashed changes
 
+--
+-- Indexes for dumped tables
+--
 
--- -----------------------------------------------------
--- Table `TuZik?`.`Commande`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `TuZik?`.`Commande` (
-  `id` BIGINT NOT NULL AUTO_INCREMENT,
-  `userId` BIGINT NOT NULL,
-  `sessionId` VARCHAR(100) NOT NULL,
-  `shipping` FLOAT NOT NULL DEFAULT 0,
-  `total` FLOAT NOT NULL DEFAULT 0,
-  `grandTotal` FLOAT NOT NULL DEFAULT 0,
-  PRIMARY KEY (`id`),
-  CONSTRAINT `fk_Commande_utilisateur`
-    FOREIGN KEY (`userId`)
-    REFERENCES `TuZik?`.`utilisateur` (`id`)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE);
+--
+-- Indexes for table `panier`
+--
+ALTER TABLE `panier`
+  ADD PRIMARY KEY (`id`);
 
+--
+-- Indexes for table `commandes`
+--
+ALTER TABLE `commandes`
+  ADD PRIMARY KEY (`id`);
 
--- -----------------------------------------------------
--- Table `TuZik?`.`Commande_article`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `TuZik?`.`Commande_article` (
-  `id` BIGINT NOT NULL AUTO_INCREMENT,
-  `produitId` BIGINT NULL,
-  `CommandeId` BIGINT NOT NULL,
-  `quantite` FLOAT NOT NULL DEFAULT 0,
-  PRIMARY KEY (`id`),
-  CONSTRAINT `fk_Commande_objet_produit`
-    FOREIGN KEY (`produitId`)
-    REFERENCES `TuZik?`.`article` (`id`)
-    ON DELETE SET NULL
-    ON UPDATE SET NULL,
-  CONSTRAINT `fk_Commande_objet_Commande`
-    FOREIGN KEY (`CommandeId`)
-    REFERENCES `TuZik?`.`Commande` (`id`)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE);
+--
+-- Indexes for table `produits`
+--
+ALTER TABLE `produits`
+  ADD PRIMARY KEY (`id`);
 
+--
+-- Indexes for table `liste_de_souhaits`
+--
+ALTER TABLE `liste_de_souhaits`
+  ADD PRIMARY KEY (`id`);
 
--- -----------------------------------------------------
--- Table `TuZik?`.`paiement`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `TuZik?`.`paiement` (
-  `id` BIGINT NOT NULL AUTO_INCREMENT,
-  `CommandeId` BIGINT NOT NULL,
-  `code` VARCHAR(100) NOT NULL,
-  `type` SMALLINT(6) NOT NULL DEFAULT 0,
-  `mode` SMALLINT(6) NOT NULL DEFAULT 0,
-  PRIMARY KEY (`id`, `code`, `type`),
-  CONSTRAINT `fk_paiement_commande`
-    FOREIGN KEY (`CommandeId`)
-    REFERENCES `TuZik?`.`Commande` (`id`)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE);
+--
+-- AUTO_INCREMENT for dumped tables
+--
 
+--
+-- AUTO_INCREMENT for table `panier`
+--
+ALTER TABLE `panier`
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
 
--- -----------------------------------------------------
--- Table `TuZik?`.`photo_article`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `TuZik?`.`photo_article` (
-  `id` BIGINT NOT NULL,
-  `produitId` BIGINT NOT NULL,
-  `image` VARCHAR(80) NOT NULL,
-  PRIMARY KEY (`id`),
-  CONSTRAINT `produitId`
-    FOREIGN KEY (`produitId`)
-    REFERENCES `TuZik?`.`article` (`id`)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE)
-ENGINE = InnoDB;
+--
+-- AUTO_INCREMENT for table `commandes`
+--
+ALTER TABLE `commandes`
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
 
+<<<<<<< Updated upstream
 -- -----------------------------------------------------
 -- Table `TuZik?`.`profilmusicien`
 -- -----------------------------------------------------
@@ -218,7 +218,17 @@ CREATE TABLE IF NOT EXISTS `TuZik?`.`profilmusicien` (
     ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
+=======
+--
+-- AUTO_INCREMENT for table `produits`
+--
+ALTER TABLE `produits`
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
+>>>>>>> Stashed changes
 
-SET SQL_MODE=@OLD_SQL_MODE;
-SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
-SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+--
+-- AUTO_INCREMENT for table `liste_de_souhaits`
+--
+ALTER TABLE `liste_de_souhaits`
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
+COMMIT;

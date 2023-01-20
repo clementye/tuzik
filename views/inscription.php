@@ -43,22 +43,20 @@ background: url("/images/TUZIK\(bckgrnd2\).png") no-repeat center center fixed;
 				echo "<br>";
 			} ?>
             <h1 class="texte">Inscription</h1>
-            <br />
-            <div class="texte"><label for="prenom">Prénom :</label>
-			<input type="prenom" id="prenom" name="prenom" /></div>
-            <br />
 			<div class="texte"><label for="nom">Nom :</label>
 			<input type="nom" id="nom" name="nom" /></div>
+			<br />
+      <div class="texte"><label for="prenom">Prénom :</label>
+			<input type="prenom" id="prenom" name="prenom" /></div>
+			<br />
+      <div class="texte"><label for="tel">Téléphone :</label>
+			<input type="tel" id="tel" name="tel" /></div>
 			<br />
 			<div class="texte"><label for="email">Email :</label>
 			<input type="email" id="email" name="email" /></div>
 			<br />
 			<div class="texte"><label for="password">Mot de passe :</label>
 			<input type="password" id="password" name="password" /></div>
-			<br />
-            <div class="texte"><label for="tel">Telephone :</label>
-			<input type="tel" id="tel" name="tel" /></div>
-            <br />
             <br>
 			<button name="action" value="sign-in">S'inscrire</button> <br>
       <a style="color:aliceblue" href="/views/connexion.php">Déjà inscrit ?</a> </br>

@@ -1,48 +1,25 @@
-<!doctype html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title>Accueil</title>
-		<link rel="stylesheet" href="/models/style.css">
-      <style>
-         body {
-            background-color: #EFEFEF;}
-         text {
-            display: flex;
-            flex-direction: column;
-          text-align: center;
-         }
-      </style>
-	</head>
-	<body>
-		<section style="background-color: #FFFFFF;">
-      <nav>
-         <div class="nav-bar">
-            <!--- logo --->
-            <div class="logo">
-               <img src="/images/newtuzik.png" alt="" />
-            </div>
-            <!---- barre de navigation---->
-            <div class="menu-bar">
-               <ul id="menu-items">
-               <li><a href="/views/accueil.php">Accueil</a></li>
-                  <li><a href="/controllers/afficherFabricants">Fabricants</a></li>
-                  <li><a href="#!">Messagerie</a></li>
-                  <li><a href="/controllers/espace_membres.php">Espace Membre</a></li>
-                  <li><a href="/controllers/panier.php">Panier</a></li>
-                  <li><a href="/views/pageDemande.php">Ajouter un article</a></li>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Espace membres</title>
+   
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
-               </ul>
-            </div>
-            <!--- Barre de recherche ---->
-            <div class="search-bar">
-               <img src="/images/search-icon.jpg" alt="">
-               <input type="search" placeholder="Recherche">
-            </div>
-         </div>
-      </nav>
-   </section>
-	<text>
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="../css/style.css">
+
+</head>
+<body>
+   
+<?php include '../models/header.php'; ?>
+
+<section class="produits">
+
+<text>
    <br>
 	</br>
 		<h1>Espace Personnel</h1>
@@ -59,5 +36,10 @@
 			echo $confirmation;
 		} ?>
    </text>
-	</body>
+
+</section>
+
+<script src="../js/script.js"></script>
+
+</body>
 </html>
