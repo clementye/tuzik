@@ -123,7 +123,6 @@ CREATE TABLE `produits` (
 -- Table structure for table `liste_de_souhaits`
 --
 
-<<<<<<< Updated upstream
 -- -----------------------------------------------------
 -- Table `TuZik?`.`panier_article`
 -- -----------------------------------------------------
@@ -144,16 +143,6 @@ CREATE TABLE IF NOT EXISTS `TuZik?`.`panier_article` (
     ON DELETE CASCADE
     ON UPDATE CASCADE)
 ENGINE = InnoDB;
-=======
-CREATE TABLE `liste_de_souhaits` (
-  `id` int(100) NOT NULL,
-  `utilisateur_id` int(100) NOT NULL,
-  `pid` int(100) NOT NULL,
-  `name` varchar(100) NOT NULL,
-  `prix` int(100) NOT NULL,
-  `image` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
->>>>>>> Stashed changes
 
 --
 -- Indexes for dumped tables
@@ -199,7 +188,6 @@ ALTER TABLE `panier`
 ALTER TABLE `commandes`
   MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
 
-<<<<<<< Updated upstream
 -- -----------------------------------------------------
 -- Table `TuZik?`.`profilmusicien`
 -- -----------------------------------------------------
@@ -218,13 +206,6 @@ CREATE TABLE IF NOT EXISTS `TuZik?`.`profilmusicien` (
     ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
-=======
---
--- AUTO_INCREMENT for table `produits`
---
-ALTER TABLE `produits`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
->>>>>>> Stashed changes
 
 --
 -- AUTO_INCREMENT for table `liste_de_souhaits`
