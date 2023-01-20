@@ -201,6 +201,24 @@ CREATE TABLE IF NOT EXISTS `TuZik?`.`photo_article` (
     ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
+-- -----------------------------------------------------
+-- Table `TuZik?`.`profilmusicien`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `TuZik?`.`profilmusicien` (
+  `NumMusicien` INT NOT NULL AUTO_INCREMENT,
+  `adresse` VARCHAR(45) NOT NULL,
+  `niveau` VARCHAR(45) NULL,
+  `instrument` VARCHAR (80) NULL,
+  `description` VARCHAR (80) NULL,
+  `utilisateur_id` BIGINT NOT NULL,
+  PRIMARY KEY (`NumMusicien`),
+  CONSTRAINT `fk_profilMusicien_utilisateur`
+    FOREIGN KEY (`utilisateur_id`)
+    REFERENCES `TuZik?`.`utilisateur` (`id`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
+ENGINE = InnoDB;
+
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
