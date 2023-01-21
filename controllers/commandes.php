@@ -1,12 +1,10 @@
 <?php
 
-include '../models/connexion.php';
-
   session_start();
-  if (isset($_SESSION["user-id"])) {
-    require_once "../views/commandes.php";
-  } else {
-    require_once "../views/connexion.php";
-  }
+  require_once "../models/articles.php";
+  $mesCommandes = $afficher_commandes($_SESSION["user-id"]);
+  /*$mesArticlesVendu = $afficher_produit_achetes($_SESSION["user-id"]);*/
+
+  require_once "../views/commandes.php";
 
 ?>

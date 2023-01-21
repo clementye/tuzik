@@ -61,7 +61,7 @@ if ($_POST["email"] == null or $_POST["password"] == null) {
 				$_SESSION["user-statue"] = "de Particulier";
 			}
 
- 			require_once "../views/espace_membres.php";
+ 			require_once "../views/espace_personnel.php";
 		}
 	}
 }

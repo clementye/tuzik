@@ -14,13 +14,13 @@
    <!-- barre de navigation ---->
    <section style="background-color: #FFFFFF;">
       <nav>
-         <div class="nav-bar">
+         <div class="navbar">
             <!--- logo --->
             <div class="logo">
                <img src="/images/newtuzik.png" alt="" />
             </div>
             <!---- barre de navigation---->
-            <div class="menu-bar">
+          <!--  <div class="menu-bar">
                <ul id="menu-items">
                   <li><a href="/views/accueil.php">Accueil</a></li>
                   <li><a href="/controllers/afficherFabricants">Fabricants</a></li>
@@ -29,16 +29,22 @@
                   <li><a href="/controllers/espace_membres.php">Espace Membre</a></li>
                   <li><a href="/controllers/panier.php">Panier</a></li>
                   <li><a href="/views/pageDemande.php">Ajouter un article</a></li>
+-->
+                  <?php include '../models/header.php'; ?>
 
 <div class="accueil-bg">
 
 <section class="accueil">
 
    <div class="swiper accueil-slider">
-   
-   <div class="swiper-wrapper">
 
-      <div class="swiper-slide slide">
+   <div class="swiper-wrapper">
+     <div class="swiper-slide slide">
+       <div class="content">
+       </div>
+     </div>
+
+    <!--  <div class="swiper-slide slide">
          <div class="image">
             <img src="../images/accueil-img-1.png" alt="">
          </div>
@@ -69,7 +75,7 @@
             <h3>jusqu'à 30% de réduction</h3>
             <a href="../controllers/boutique.php" class="btn">Acheter maintenant</a>
          </div>
-      </div>
+      </div>-->
 
    </div>
 
@@ -88,32 +94,16 @@
    <div class="swiper categorie-slider">
 
    <div class="swiper-wrapper">
-
-   <a href="categorie.php?categorie=guitare" class="swiper-slide slide">
-      <img src="../images/icon-1.png" alt="">
-      <h3>guitare</h3>
-   </a>
-
-   <a href="categorie.php?categorie=violon" class="swiper-slide slide">
-      <img src="../images/icon-2.png" alt="">
-      <h3>violon</h3>
-   </a>
-
-   <a href="categorie.php?categorie=flute" class="swiper-slide slide">
-      <img src="../images/icon-3.png" alt="">
-      <h3>flute</h3>
-   </a>
-
-   <a href="categorie.php?categorie=piano" class="swiper-slide slide">
-      <img src="../images/icon-4.png" alt="">
-      <h3>piano</h3>
-   </a>
-
-   <a href="categorie.php?categorie=bass" class="swiper-slide slide">
-      <img src="../images/icon-5.png" alt="">
-      <h3>bass</h3>
-   </a>
-
+   <?php
+      require_once "../models/articles.php";
+      $catégorie = $afficher_catégorie();
+      foreach($catégorie as $cat) {
+        echo '<a href="../controllers/boutique.php?categorie='.$cat->id.'" class="swiper-slide slide">
+           <img src="../images/'.$cat->Titre.'.png" alt="">
+           <h3>'.$cat->Titre.'</h3>
+        </a>';
+      }
+   ?>
    </div>
 
    <div class="swiper-pagination"></div>
@@ -131,32 +121,46 @@
    <div class="swiper-wrapper">
 
    <!--?php
-     $select_produits = $db->prepare("SELECT * FROM `produits` LIMIT 3"); 
+     $select_produits = $db->prepare("SELECT * FROM `produits` LIMIT 3");
      $select_produits->execute();
      if($select_produits->rowCount() > 0){
       while($fetch_produits = $select_produits->fetch(PDO::FETCH_ASSOC)){
-   ?--> // $produit
-   <form action="" method="post" class="swiper-slide slide">
-      <input type="hidden" name="pid" value="<?= $fetch_produits['id']; ?>">
-      <input type="hidden" name="name" value="<?= $fetch_produits['name']; ?>">
-      <input type="hidden" name="prix" value="<?= $fetch_produits['prix']; ?>">
-      <input type="hidden" name="image" value="<?= $fetch_produits['image_01']; ?>">
+   ?--> <!// $produit>
+
+   <?php
+   require_once "../models/articles.php";
+   $articles = $afficher_articles_last();
+   function createSelectBox($optionCount){
+      for($idx=1; $idx <= $optionCount; $idx++){
+          $out .= '<option value='.$idx.' >' . $idx . '</option>';
+      }
+      return $out;}
+     foreach ($articles as $AR) {
+     echo '<div class="box-container">
+     <form action="../controllers/ajoutpanier.php" method="post" class="box">
+     <div class="box">
+     <input type="hidden" id="titre" name="titre" value="'.$AR->Titre.'"/>'.$AR->Titre.'
+     <br><select class="quantite" name="quantite">';
+      echo createSelectBox($AR->quantite);
+      echo '</select>
       <button class="fas fa-heart" type="submit" name="ajouter_au_liste_de_souhaits"></button>
-      <a href="fiche_produit.php?pid=<?= $fetch_produits['id']; ?>" class="fas fa-eye"></a>
-      <img src="../uploaded_img/<?= $fetch_produits['image_01']; ?>" alt="">
-      <div class="name"><?= $fetch_produits['name']; ?></div>
+      <img src="../uploaded_img/" alt="">
+      <div class="name"></div>
       <div class="flex">
-         <div class="prix"><span>$</span><?= $fetch_produits['prix']; ?><span>/-</span></div>
+         <div class="prix"><span>€</span><span>/<input type="hidden" id="titre" name="titre" value="'.$AR->prix.'"/>'.$AR->prix.'</span></div>
          <input type="number" name="qty" class="qty" min="1" max="99" onkeypress="if(this.value.length == 2) return false;" value="1">
       </div>
-      <input type="submit" value="ajouter au panier" class="btn" name="ajouter_au_panier">
-   </form>
-   <?php
+     <input type="submit" value="ajouter au panier" class="btn" name="ajouter_au_panier">
+     </form>
+     </div>';
+   };
+    ?>
+   <!--?php
       }
    }else{
       echo '<p class="empty">aucun produit a encore été ajouté !</p>';
    }
-   ?>
+   ?-->
 
    </div>
 
@@ -172,17 +176,17 @@
 
 <script>
 
-var swiper = new Swiper(".accueil-slider", {
+/*var swiper = new Swiper(".accueil-slider", {
    loop:true,
    spaceBetween: 20,
    pagination: {
       el: ".swiper-pagination",
       clickable:true,
     },
-});
+});*/
 
  var swiper = new Swiper(".categorie-slider", {
-   loop:true,
+   loop:false,
    spaceBetween: 20,
    pagination: {
       el: ".swiper-pagination",
