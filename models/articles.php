@@ -2,21 +2,21 @@
   require_once "connexion.php";
 
   $afficher_articles_all = function () use ($db) {
-    $statement = $db->prepare("SELECT * FROM article;");
+    $statement = $db->prepare("SELECT * FROM article WHERE quantite > 0;");
     $statement->execute();
     $result = $statement->fetchAll(PDO::FETCH_OBJ);
     return $result;
   };
 
   $afficher_articles_précis = function (string $catégorie) use ($db) {
-    $statement = $db->prepare("SELECT * FROM article ORDER BY id DESC;");
+    $statement = $db->prepare("SELECT * FROM article WHERE quantite > 0 ORDER BY id DESC;");
     $statement->execute([$catégorie]);
     $result = $statement->fetchAll(PDO::FETCH_OBJ);
     return $result;
   };
 
   $afficher_articles_last = function () use ($db) {
-    $statement = $db->prepare("SELECT * FROM article;");
+    $statement = $db->prepare("SELECT * FROM article WHERE quantite > 0;");
     $statement->execute();
     $result = $statement->fetchAll(PDO::FETCH_OBJ);
     return $result;

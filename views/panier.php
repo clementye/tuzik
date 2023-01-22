@@ -39,9 +39,8 @@
            <div class="name">'.$PAN->Titre.'</div>
            <div class="flex">
            <div class="prixUnit">$/'.$PAN->PrixUnitaire.'</div>
-           <div class="prixTot">$/'.$PAN->prixTotal.'</div>';
-           //echo createSelectBox($PAN->Quantité);
-           echo '<input type="number" name="Quantité" class="Quantité" min="'.$PAN->Quantité.'" max="0" onkeypress="if(this.value.length == 2) return false;" value="">
+           <div class="prixTot">$/'.$PAN->prixTotal.'</div>
+           <input type="number" name="Quantité" class="Quantité" min="'.$PAN->Quantité.'" max="0" onkeypress="if(this.value.length == 2) return false;" value="">
               <button type="submit" class="fas fa-edit" name="modification_qty"></button>
            </div>
            <div class="sub-total"> sub total : <span>$/-</span> </div>
