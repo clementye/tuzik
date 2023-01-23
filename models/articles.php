@@ -1,5 +1,5 @@
 <?php
-  require_once "connexion.php";
+  require_once "../models/connexion.php";
 
   $afficher_articles_all = function () use ($db) {
     $statement = $db->prepare("SELECT * FROM article WHERE quantite > 0;");
