@@ -26,21 +26,25 @@
          <th>Nom de l'article</th>
          <th>Quantité</th>
          <th>Prix</th>
-         <th>Tarif</th>
+         <th>Catégorie</th>
+         <th>Shipping</th>
       </tr>
 
+      <a href="../views/ajouterArticle.php" class="btn">Ajouter un article</a>
+
    <?php
-    foreach ($articles as $art) {
+   if ($mesArticles!==false){
+    foreach ($mesArticles as $art) {
       echo '<tr><form action="../controllers/supprimerArticle.php" method="post" class="box">
         <th><img src="../uploaded_img/" alt="">
-        <th><input type="hidden" name="articleid" value="'.$titre->Titre.'"><div class="prixUnit">'.$titre->Titre.'</div>
-        <th><input type="hidden" name="articleid" value="'.$titre->Quantité.'"><div class="prixTot">'.$titre->Titre.'</div>
-        <th><input type="hidden" name="articleid" value="'.$titre->Prix.'"><div class="prixTot">$/'.$titre->Prix.'</div>
-        <th><input type="hidden" name="articleid" value="'.$titre->Shipping.'"><div class="prixTot">'.$titre->Shipping.'</div>
+        <th><input type="hidden" name="articleid" value="'.$art->Titre.'"><div class="prixUnit">'.$art->Titre.'</div>
+        <th><input type="hidden" name="articleid" value="'.$art->Quantité.'"><div class="prixTot">'.$art->Quantité.'</div>
+        <th><input type="hidden" name="articleid" value="'.$art->Prix.'"><div class="prixTot">$/'.$art->Prix.'</div>
+        <th><input type="hidden" name="articleid" value="'.$art->Catégorie.'"><div class="prixTot">$/'.$art->Catégorie.'</div>
+        <th><input type="hidden" name="articleid" value="'.$art->Shipping.'"><div class="prixTot">'.$art->Shipping.'</div>
         <th><input type="submit" value="supprimer" class="delete-btn" name="delete">
       </form>';
-
-  };
+  };};
    ?>
     </table>
    </parent>

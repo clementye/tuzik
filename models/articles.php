@@ -88,5 +88,15 @@
     $statement->execute([$UID]);
     $result=$statement->fetch(PDO::FETCH_OBJ);
     return $result;
-  }
+  };
+
+  $afficher_mes_articles = function (string $UID) use ($db) {
+    $statement = $db->prepare("SELECT AR.Titre AS Titre, AR.quantite AS Quantité, AR.prix AS Prix, CAT.Titre AS Catégorie, CAR.shippingStatus AS Shipping
+    FROM categorie AS CAT JOIN article AS AR ON CAT.id = AR.idCategorie
+    JOIN commande_article AS CAR ON AR.id = CAR.produitId
+    WHERE AR.utilisateurId = ?;");
+    $statement->execute([$UID]);
+    $result=$statement->fetch(PDO::FETCH_OBJ);
+    return $result;
+  };
  ?>

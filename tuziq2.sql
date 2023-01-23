@@ -126,6 +126,28 @@ CREATE TABLE IF NOT EXISTS `TuZik?`.`Commande` (
     ON UPDATE CASCADE)
     ENGINE = InnoDB;
 
+-- -----------------------------------------------------
+-- Table `TuZik?`.`commande_article`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `TuZik?`.`commande_article` (
+  `id` BIGINT NOT NULL AUTO_INCREMENT,
+  `produitId` BIGINT NULL,
+  `commandeId` BIGINT NOT NULL,
+  `quantite` FLOAT NOT NULL DEFAULT 0,
+  `shippingStatus` varchar(20) NOT NULL DEFAULT 'pending',
+  PRIMARY KEY (`id`),
+  CONSTRAINT `fk_commande_article_article`
+    FOREIGN KEY (`produitId`)
+    REFERENCES `TuZik?`.`article` (`id`)
+    ON DELETE SET NULL
+    ON UPDATE SET NULL,
+  CONSTRAINT `fk_commande_article_commande`
+    FOREIGN KEY (`commandeId`)
+    REFERENCES `TuZik?`.`commande` (`id`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
+  ENGINE = InnoDB;
+
 
 -- -----------------------------------------------------
 -- Table `TuZik?`.`panier_article`

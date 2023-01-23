@@ -8,7 +8,9 @@ $ajouter_fabricant = function (string $adresse, string $nom, string $specialite,
 };
 
 $afficher_fabricant = function() use($db){
-  $statement = $db->prepare("SELECT Nom, specialite, adresse, prix FROM profilfabricant;");
+  $statement = $db->prepare("SELECT PF.adresse AS adresse, PF.Nom AS Nom, PF.specialite AS specialite, PF.prix AS prix, UT.email AS email
+FROM profilfabricant AS PF JOIN utilisateur AS UT
+ON PF.utilisateurId = UT.id;");
 	$statement->execute();
 	$result = $statement->fetchAll(PDO::FETCH_OBJ);
 	return $result;

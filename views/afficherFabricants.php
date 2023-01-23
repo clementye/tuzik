@@ -5,7 +5,7 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Liste des fabricants</title>
-   
+
    <!-- font awesome cdn link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
@@ -14,22 +14,23 @@
 
 </head>
 <body>
-   
+
 <?php include '../models/header.php'; ?>
 
 <section class="">
 <parent>
-   
+
    <table  border="1" cellpading="7" width=50% style="position:absolute; font-size:large">
-      
+
       <tr>
          <th>Nom</th>
          <th>Specialité</th>
          <th>Adresse</th>
          <th>Tarif</th>
+         <th>Contact</th>
       </tr>
-     
-   <?php 
+
+   <?php
     require_once "../models/fabricant.php";
     $fabricant = $afficher_fabricant();
     foreach ($fabricant as $fab) {
@@ -38,14 +39,19 @@
       <th>'. $fab->Nom." "."</th>
       <th> ". $fab->specialite." "."</th>
       <th> ". $fab->adresse." "."</th>
-      <th> ". $fab->prix." "."</th>
+      <th> "."€/". $fab->prix."/Heure"."</th>
       </tr> ";
+      if (isset($_SESSION["user-id"])){
+        echo "<th> ".$fab->email."</th></tr> ";
+      } else {
+        echo "<th> Veuillez-vous connecter</th></tr> ";
+      };
 
   }
    ?>
-    </table>   
+    </table>
    </parent>
-  
+
 
 </section>
 

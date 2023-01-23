@@ -8,7 +8,8 @@ $ajouter_musicien = function (string $adresse, string $instrument, string $nivea
 };
 
 $afficher_musicien = function() use($db){
-  $statement = $db->prepare("SELECT UT.Nom AS Nom, PM.instrument AS instrument, PM.adresse AS adresse, PM.niveau AS niveau, PM.bio AS `bio` FROM profilmusicien AS PM JOIN utilisateur AS UT ON PM.utilisateurId = UT.id;");
+  $statement = $db->prepare("SELECT UT.Nom AS Nom, PM.instrument AS instrument, PM.adresse AS adresse, PM.niveau AS niveau, PM.bio AS bio, UT.email AS email
+		FROM profilmusicien AS PM JOIN utilisateur AS UT ON PM.utilisateurId = UT.id;");
 	$statement->execute();
 	$result = $statement->fetchAll(PDO::FETCH_OBJ);
 	return $result;
