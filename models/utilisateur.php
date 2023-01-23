@@ -11,7 +11,6 @@ $vérifier_mail = function (string $email) use($db) {
 $ajouter_utilisateur = function (string $nom, string $prenom, string $telephone, string $email, string $motDePasse) use($db) {
 	$statement = $db->prepare("INSERT INTO utilisateur(nom, prenom, telephone, email, motdepasse) VALUES (?, ?, ?, ?, ?);");
 	$result = $statement->execute([$nom, $prenom, $telephone, $email, $motDePasse]);
-	var_dump($result);
 	// TODO: Gestion des erreurs.
 };
 
