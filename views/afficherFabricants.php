@@ -20,13 +20,13 @@
 <section class="">
 <parent>
    
-   <table  border="1" cellpading="7" width=50% style="position:absolute">
+   <table  border="1" cellpading="7" width=50% style="position:absolute; font-size:large">
       
       <tr>
          <th>Nom</th>
-         <th>Specialite</th>
+         <th>Specialité</th>
          <th>Adresse</th>
-         <th>Prix</th>
+         <th>Tarif</th>
       </tr>
      
    <?php 

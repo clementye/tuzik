@@ -33,7 +33,7 @@ background: url("../images/accueil-bg.png") no-repeat center center fixed;
         <div class=l>
 		<form action="/controllers/authentifier.php" method="post">
 			<?php if (isset ($erreur)) {
-				echo $erreur;
+				echo '<span style="color:#FFFFFF">'.$erreur.'</span>';
 				echo "<br>";
 			} ?>
             <h1 class="texte">Connexion</h1>

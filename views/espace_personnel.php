@@ -14,12 +14,12 @@
 
 <section class="espace">
 
-<text>
+<text style="font-size:large">
    <br>
 	</br>
 		<h1>Espace Personnel</h1>
 		<h1>Bienvenue <?php echo $_SESSION["user-name"]; ?> </h1>
-		<?php echo "Vous avez un profil ".$_SESSION["user-statue"] ?>
+		<?php echo "Vous avez un profil ".$_SESSION["user-statue"] ?><br>
 				<a href="/views/modifier_utilisateur.php">Modifier compte</a><br>
 				<a href="/views/fabricant.php">Profil de fabriquant</a><br>
             <a href="/views/musicien.php">Profil de musicien</a><br>

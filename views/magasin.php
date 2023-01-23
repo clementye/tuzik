@@ -49,7 +49,8 @@ background: url("../images/magasin-bg.jpg") no-repeat center center fixed;
             <br>
 			<button name="action" value="Enregister">Enregister</button>
 		</form>
+    <a href="/controllers/espace_membres.php" style="color:darkorange">Retour</a>
 		</div>
-    <a href="/controllers/espace_membres.php">Retour</a>
+    
   </body>
 </html>

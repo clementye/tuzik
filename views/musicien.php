@@ -23,6 +23,7 @@ background: url("../images/musicien-bg.jpg") no-repeat center center fixed;
     font-family:  Courier New, monospace;
   }
 </style>
+
 	</head>
 	<body>
     <logo>
@@ -38,10 +39,10 @@ background: url("../images/musicien-bg.jpg") no-repeat center center fixed;
             <div class="texte"><label for="adresse">Adresse :</label>
 			<input type="adresse" id="adresse" name="adresse" /></div>
             <br />
-			<div class="texte"><label for="instrument">instrument :</label>
+			<div class="texte"><label for="instrument">Instrument :</label>
 			<input type="instrument" id="instrument" name="instrument" /></div>
 			<br />
-			<div class="texte"><label for="niveau">niveau :</label>
+			<div class="texte"><label for="niveau">Niveau :</label>
 			<input type="niveau" id="niveau" name="niveau" /></div>
 			<br />
             <div class="texte"><label for="description">Description :</label>
@@ -49,8 +50,12 @@ background: url("../images/musicien-bg.jpg") no-repeat center center fixed;
             </textarea>
             </div>
 			<button name="action" value="Enregister">Enregister</button>
+      <br>
+      
+      
 		</form>
+    <a href="/controllers/espace_membres.php" style="color:darkorange">Retour</a>
 		</div>
-    <a href="/controllers/espace_membres.php">Retour</a>
+
   </body>
 </html>
