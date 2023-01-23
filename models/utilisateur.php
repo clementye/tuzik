@@ -15,7 +15,7 @@ $ajouter_utilisateur = function (string $nom, string $prenom, string $telephone,
 };
 
 $recuperer_utilisateur = function (string $email) use($db) {
-	$statement = $db->prepare("SELECT id, email, motdepasse, NumMagasin, NumFabricant FROM utilisateur WHERE email = ?;");
+	$statement = $db->prepare("SELECT id, prenom, email, motdepasse, NumMagasin, NumFabricant FROM utilisateur WHERE email = ?;");
 	$statement->execute([$email]);
 	$result = $statement->fetch(PDO::FETCH_OBJ);
 	return $result;
