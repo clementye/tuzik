@@ -45,14 +45,14 @@ background: url("../images/musicien-bg.jpg") no-repeat center center fixed;
 			<div class="texte"><label for="niveau">Niveau :</label>
 			<input type="niveau" id="niveau" name="niveau" /></div>
 			<br />
-            <div class="texte"><label for="description">Description :</label>
-            <textarea type="description" id="descritpion" name="description" rows="5" cols="33">
+            <div class="texte"><label for="bio">bio :</label>
+            <textarea type="bio" id="bio" name="bio" rows="5" cols="33">
             </textarea>
             </div>
 			<button name="action" value="Enregister">Enregister</button>
       <br>
-      
-      
+
+
 		</form>
     <a href="/controllers/espace_membres.php" style="color:darkorange">Retour</a>
 		</div>

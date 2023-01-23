@@ -176,7 +176,7 @@ CREATE TABLE IF NOT EXISTS `TuZik?`.`profilmusicien` (
   `adresse` VARCHAR(45) NOT NULL,
   `niveau` VARCHAR(45) NULL,
   `instrument` VARCHAR (80) NULL,
-  `description` VARCHAR (80) NULL,
+  `bio` VARCHAR (80) NULL,
   `utilisateurId` BIGINT NOT NULL,
   PRIMARY KEY (`NumMusicien`),
   CONSTRAINT `fk_profilMusicien_utilisateur`
