@@ -112,11 +112,7 @@
    <?php
    require_once "../models/articles.php";
    $articles = $afficher_articles_last();
-   function createSelectBox($optionCount){
-      for($idx=1; $idx <= $optionCount; $idx++){
-          $out .= '<option id="quantite" name="quantite" value='.$idx.' >' . $idx . '</option>';
-      }
-      return $out;}
+   
      foreach ($articles as $AR) {
      echo '<div class="box-container">
      <form action="../controllers/ajoutpanier.php" method="post" class="box">
