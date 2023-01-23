@@ -24,21 +24,19 @@
       
       <tr>
          <th>Nom</th>
-         <th>Specialite</th>
          <th>Adresse</th>
-         <th>Prix</th>
+         <th>Horaires</th>
       </tr>
      
    <?php 
-    require_once "../models/fabricant.php";
-    $fabricant = $afficher_fabricant();
-    foreach ($fabricant as $fab) {
+    require_once "../models/magasin.php";
+    $magasin = $afficher_magasin();
+    foreach ($magasin as $mag) {
       echo '
       <tr>
       <th>'. $fab->Nom." "."</th>
-      <th> ". $fab->specialite." "."</th>
       <th> ". $fab->adresse." "."</th>
-      <th> ". $fab->prix." "."</th>
+      <th> ". $fab->horaires." "."</th>
       </tr> ";
 
   }
