@@ -44,10 +44,14 @@ if ($_POST["email"] == null or $_POST["password"] == null) {
 			$nomUtilisateur ='';
 			$status1 = $utilisateur-> NumMagasin;
 			$status2 = $utilisateur-> NumFabricant;
-			$finNomUtilisateur = strpos($_POST["email"], '@');
-			for ($i=0; $i < $finNomUtilisateur; $i++) {
-				$nomUtilisateur .= $_POST['email'][$i];
-			}
+			if (isset($utilisateur->prenom)) {
+				$nomUtilisateur = $utilisateur->prenom;
+			} else {
+				$finNomUtilisateur = strpos($_POST["email"], '@');
+				for ($i=0; $i < $finNomUtilisateur; $i++) {
+					$nomUtilisateur .= $_POST['email'][$i];
+				};
+			};
 			// Sinon, on enregistre l'id de l'utilisateur dans la session et on affiche la page suivante
 			session_start();
 			$_SESSION["user-id"] = $utilisateur->id;
