@@ -46,8 +46,7 @@ background: url("../images/musicien-bg.jpg") no-repeat center center fixed;
 			<input type="niveau" id="niveau" name="niveau" /></div>
 			<br />
             <div class="texte"><label for="bio">bio :</label>
-            <textarea type="bio" id="bio" name="bio" rows="5" cols="33">
-            </textarea>
+            <textarea type="bio" id="bio" name="bio" rows="5" cols="33"></textarea>
             </div>
 			<button name="action" value="Enregister">Enregister</button>
       <br>

@@ -14,19 +14,19 @@
 
 </head>
 
-
 <?php include '../models/header.php'; ?>
 
 <section class="">
 <parent>
 
-   <table  border="1" cellpading="7" width=50% style="position:absolute; font-size:large">
+   <table  border="1" cellpading="7" width=50% style="margin-left:5%; position:center; font-size:large">
       
       <tr>
          <th>Nom</th>
          <th>Niveau</th>
          <th>Adresse</th>
          <th>Instrument</th>
+         <th>À propos de moi</th>
       </tr>
      
    <?php 
@@ -39,6 +39,8 @@
       <th> ". $mus->niveau." "."</th>
       <th> ". $mus->adresse." "."</th>
       <th> ". $mus->instrument." "."</th>
+      <th> ". $mus->bio." "."</th>
+      
       </tr> ";
   }
 
