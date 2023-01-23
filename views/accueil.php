@@ -26,39 +26,6 @@
        </div>
      </div>
 
-    <!--  <div class="swiper-slide slide">
-         <div class="image">
-            <img src="../images/accueil-img-1.png" alt="">
-         </div>
-         <div class="content">
-            <span>Sur les derniers guitares</span>
-            <h3>jusqu'à 50% de réduction</h3>
-            <a href="../controllers/boutique.php" class="btn">Acheter maintenant</a>
-         </div>
-      </div>
-
-      <div class="swiper-slide slide">
-         <div class="image">
-            <img src="../images/accueil-img-2.png" alt="">
-         </div>
-         <div class="content">
-            <span>Sur les derniers violons</span>
-            <h3>jusqu'à 40% de réduction</h3>
-            <a href="../controllers/boutique.php" class="btn">Acheter maintenant</a>
-         </div>
-      </div>
-
-      <div class="swiper-slide slide">
-         <div class="image">
-            <img src="../images/accueil-img-3.png" alt="">
-         </div>
-         <div class="content">
-            <span>Sur les derniers flutes</span>
-            <h3>jusqu'à 30% de réduction</h3>
-            <a href="../controllers/boutique.php" class="btn">Acheter maintenant</a>
-         </div>
-      </div>-->
-
    </div>
 
       <div class="swiper-pagination"></div>
@@ -102,17 +69,10 @@
 
    <div class="swiper-wrapper">
 
-   <!--?php
-     $select_produits = $db->prepare("SELECT * FROM `produits` LIMIT 3");
-     $select_produits->execute();
-     if($select_produits->rowCount() > 0){
-      while($fetch_produits = $select_produits->fetch(PDO::FETCH_ASSOC)){
-   ?--> <!// $produit>
-
    <?php
    require_once "../models/articles.php";
    $articles = $afficher_articles_last();
-   
+
      foreach ($articles as $AR) {
      echo '<div class="box-container">
      <form action="../controllers/ajoutpanier.php" method="post" class="box">
@@ -133,12 +93,6 @@
      </div>';
    };
     ?>
-   <!--?php
-      }
-   }else{
-      echo '<p class="empty">aucun produit a encore été ajouté !</p>';
-   }
-   ?-->
 
    </div>
 
@@ -153,15 +107,6 @@
 <script src="../js/script.js"></script>
 
 <script>
-
-/*var swiper = new Swiper(".accueil-slider", {
-   loop:true,
-   spaceBetween: 20,
-   pagination: {
-      el: ".swiper-pagination",
-      clickable:true,
-    },
-});*/
 
  var swiper = new Swiper(".categorie-slider", {
    loop:false,
