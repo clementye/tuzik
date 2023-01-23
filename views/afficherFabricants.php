@@ -45,7 +45,7 @@
    ?>
     </table>   
    </parent>
-
+   <img src="../images/musicien-background.jpg">
 
 </section>
 

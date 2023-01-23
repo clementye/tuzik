@@ -4,11 +4,31 @@
     <meta charset="utf-8">
     <title></title>
 	<style>
-         body {
-            background-color: #EFEFEF;}
-      </style>
-  </head>
-  <body>
+ body {
+background: url("../images/fabricant-bg.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  }
+.f {
+    padding: 10%;
+    padding-top: 0%;
+    margin-right: 35%;
+    margin-left: 35%;
+    background-color:hsla(0, 0%, 0%, 0.595);
+}
+  .texte {
+    color: white;
+    font-family:  Courier New, monospace;
+  }
+</style>
+	</head>
+	<body>
+    <logo>
+    <img src="/images/newtuzik.png" alt="logo" style="width:10.5%;height:10.5%;float:top-left;">
+  </logo>
+        <div class=f>
     <form action="/controllers/fabricant.php" method="post">
 			<?php if (isset ($erreur)) {
 				echo $erreur;

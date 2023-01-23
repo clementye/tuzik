@@ -4,8 +4,8 @@
 		<meta charset="utf-8">
 		<title>Accueil</title>
         <style>
-  body {
-background: url("/images/TUZIK\(bckgrnd2\).png") no-repeat center center fixed;
+ body {
+background: url("../images/accueil-bg.png") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -14,18 +14,10 @@ background: url("/images/TUZIK\(bckgrnd2\).png") no-repeat center center fixed;
 .l {
     padding: 10%;
     padding-top: 0%;
-    margin-top: 10%;
     margin-right: 35%;
     margin-left: 35%;
     background-color:hsla(0, 0%, 0%, 0.595);
-
-
 }
-.logo {
-    width: 0%;
-    height: 0%;
-    padding-top: 50%;
-  }
   .texte {
     color: white;
     font-family:  Courier New, monospace;
@@ -34,7 +26,7 @@ background: url("/images/TUZIK\(bckgrnd2\).png") no-repeat center center fixed;
 	</head>
 	<body>
     <logo>
-    <img src="/images/newtuzik.png" alt="logo" style="width:20%;height:20%;">
+    <img src="/images/newtuzik.png" alt="logo" style="width:10.5%;height:10.5%;float:top-left;">
   </logo>
         <div class=l>
 		<form action="/controllers/authentifier.php" method="post">

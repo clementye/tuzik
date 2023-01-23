@@ -3,9 +3,9 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Accueil</title>
-        <style>
+    <style>
   body {
-background: url("/images/TUZIK(bckgrnd2).png") no-repeat center center fixed;
+background: url("../images/accueil-bg.png") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -19,11 +19,6 @@ background: url("/images/TUZIK(bckgrnd2).png") no-repeat center center fixed;
     margin-left: 35%;
     background-color:hsla(0, 0%, 0%, 0.595);
 }
-.logo {
-    width: 0%;
-    height: 0%;
-    padding-top: 50%;
-  }
   .texte {
     color: white;
     font-family:  Courier New, monospace;
@@ -32,8 +27,9 @@ background: url("/images/TUZIK(bckgrnd2).png") no-repeat center center fixed;
 	</head>
 	<body>
     <logo>
-    <img src="/images/newtuzik.png" alt="logo" style="width:20%;height:20%;">
+    <img src="/images/newtuzik.png" alt="logo" style="width:10.5%;height:10.5%;float:top-left;">
   </logo>
+  <section class="">
         <div class=l>
 		<form action="/controllers/authentifier.php" method="post">
 			<?php if (isset ($erreur)) {
@@ -56,5 +52,6 @@ background: url("/images/TUZIK(bckgrnd2).png") no-repeat center center fixed;
 		<?php if (isset ($confirmation)) {
 			echo $confirmation;
 		} ?>
+   </section> 
 	</body>
 </html>

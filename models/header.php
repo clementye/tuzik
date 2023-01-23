@@ -22,15 +22,15 @@
          <a href="accueil.php">Accueil</a>
          <a href="boutique.php">Boutique</a>
          <a href="produits.php">Ajouter articles</a>
-         <a href="afficherFabricants.php">Liste des fabricants</a>
+         <a href="afficherFabricants.php">Fabricants</a>
          <a href="commandes.php">Commande</a>
          <a href="espace_membres.php">Espace membres</a>
       </nav>
 
       <div class="icons">
          <?php
-            $count_liste_de_souhaits_items = $db->prepare("SELECT * FROM `liste_de_souhaits` WHERE user_id = ?");
-            //$count_liste_de_souhaits_items->execute([$user_id]);
+            $count_liste_de_souhaits_items = $db->prepare("SELECT * FROM `listesouhaits` WHERE user_id = ?");
+           // $count_liste_de_souhaits_items->execute([$user_id]);
             $total_liste_de_souhaits_counts = $count_liste_de_souhaits_items->rowCount();
 
             $count_panier_items = $db->prepare("SELECT * FROM `panier` WHERE user_id = ?");
@@ -41,7 +41,16 @@
          <a href="recherche.php"><i class="fas fa-search"></i></a>
          <a href="liste_de_souhaits.php"><i class="fas fa-heart"></i><span>(<?= $total_liste_de_souhaits_counts; ?>)</span></a>
          <a href="panier.php"><i class="fas fa-shopping-cart"></i><span>(<?= $total_panier_counts; ?>)</span></a>
-      </div>
+         <div id="user-btn" class="fas fa-user"></div>
+         
+      <div class="profil">
+         <div class="flex-btn">
+         <a href="../controllers/espace_membres.php" class="btn">Espace membres</a>
+         <div class="flex-btn">
+            <a href=".php" class="option-btn">test</a>
+            <a href=".php" class="option-btn">test</a>
+         </div>
+         <a href="../controllers/deconnexion.php" class="delete-btn">deconnexion</a>
 
    </section>
 

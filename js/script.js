@@ -1,11 +1,19 @@
 let navbar = document.querySelector('.header .flex .navbar');
+let profil = document.querySelector('.header .flex .profil');
 
 document.querySelector('#menu-btn').onclick = () =>{
    navbar.classList.toggle('active');
+   profil.classList.remove('active');
+}
+
+document.querySelector('#user-btn').onclick = () =>{
+   navbar.classList.remove('active');
+   profil.classList.toggle('active');
 }
 
 window.onscroll = () =>{
    navbar.classList.remove('active');
+   profil.classList.remove('active');
 }
 
 let mainImage = document.querySelector('.fiche-produit .box .row .image-container .main-image img');
