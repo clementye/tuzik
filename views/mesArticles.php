@@ -32,20 +32,30 @@
 
       <a href="../views/ajouterArticle.php" class="btn">Ajouter un article</a>
 
+      <?php if (isset($confirmation)) {
+        echo $confirmation.'</br>';
+      } ?>
+<div class="box-container">
    <?php
-   if ($mesArticles!==false){
+
+   if (!isset($_SESSION["user-id"])){
+     session_start();
+   };
+   require_once "../models/articles.php";
+  $mesArticles = $afficher_mes_articles($_SESSION["user-id"]);
     foreach ($mesArticles as $art) {
-      echo '<tr><form action="../controllers/supprimerArticle.php" method="post" class="box">
-        <th><img src="../uploaded_img/" alt="">
-        <th><input type="hidden" name="articleid" value="'.$art->Titre.'"><div class="prixUnit">'.$art->Titre.'</div>
-        <th><input type="hidden" name="articleid" value="'.$art->Quantité.'"><div class="prixTot">'.$art->Quantité.'</div>
-        <th><input type="hidden" name="articleid" value="'.$art->Prix.'"><div class="prixTot">$/'.$art->Prix.'</div>
-        <th><input type="hidden" name="articleid" value="'.$art->Catégorie.'"><div class="prixTot">$/'.$art->Catégorie.'</div>
-        <th><input type="hidden" name="articleid" value="'.$art->Shipping.'"><div class="prixTot">'.$art->Shipping.'</div>
-        <th><input type="submit" value="supprimer" class="delete-btn" name="delete">
-      </form>';
-  };};
+      echo '<th><form action="../controllers/supprimerArticle.php" method="post" class="box">
+        <img src="../uploaded_img/" alt="">
+        <input type="hidden" name="articleid" value="'.$art->Titre.'"><div class="prixUnit">'.$art->Titre.'A</div>
+        <input type="hidden" name="articleid" value="'.$art->Quantité.'"><div class="prixTot">'.$art->Quantité.'</div>
+        <input type="hidden" name="articleid" value="'.$art->Prix.'"><div class="prixTot">$/'.$art->Prix.'</div>
+        <input type="hidden" name="articleid" value="'.$art->Catégorie.'"><div class="prixTot">$/'.$art->Catégorie.'</div>
+        <input type="submit" value="supprimer" class="delete-btn" name="delete">
+      </form></th>';
+  };
    ?>
+ </div>
+
     </table>
    </parent>
 

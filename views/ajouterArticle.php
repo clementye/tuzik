@@ -22,7 +22,7 @@
       }
     ?>
 
-   <form action="../controllers/ajouterArticle" method="post" enctype="multipart/form-data">
+   <form action="../controllers/ajouterArticle.php" method="post" enctype="multipart/form-data">
       <div class="flex">
          <div class="inputBox">
             <span>Nom du produit</span>
@@ -30,11 +30,11 @@
          </div>
          <div class="inputBox">
             <span>Quantité</span>
-            <input type="number" min="0" class="box" required max="100" id="Prix" name="Prix">
+            <input type="text" class="box" required maxlength="100" id="Quantité" name="Quantité">
          </div>
          <div class="inputBox">
             <span>Prix du produit (unitaire)</span>
-            <input type="number" min="0" class="box" required max="100" id="Prix" name="Prix">
+            <input type="text" class="box" required maxlength="100" id="Prix" name="Prix">
          </div>
         <div class="inputBox">
             <span>Image (Une seule possible)</span>
@@ -47,7 +47,7 @@
           $catégorie = $afficher_catégorie();
           foreach ($catégorie as $CAT){
             echo '<option value="'.$CAT->id.'">'.$CAT->Titre.'</option>';
-          }
+          };
          ?>
       </select>
       <input type="submit" value="ajouter_produits" class="btn" name="ajouter_produits">

@@ -2,9 +2,8 @@
 require_once "connexion.php";
 
 $ajouter_magasin = function (string $adresse, string $nom, string $horaires, string $uid) use($db) {
-	$statement = $db->prepare("INSERT INTO profilmagasin(adresse, nom, horaires, utilisateur_id) VALUES (?, ?, ?, ?);");
-	$result = $statement->execute([$adresse, $nom, $horaires, $uid]);
-	var_dump($result);
+	$statement = $db->prepare("INSERT INTO profilmagasin(adresse, nom, horaires, utilisateurId) VALUES (?, ?, ?, ?);");
+	$statement->execute([$adresse, $nom, $horaires, $uid]);
 	// TODO: Gestion des erreurs.
 };
 

@@ -2,7 +2,7 @@
 require_once "connexion.php";
 
 $ajouter_fabricant = function (string $adresse, string $nom, string $specialite, string $prix, string $uid) use($db) {
-	$statement = $db->prepare("INSERT INTO profilfabricant(adresse, Nom, specialite, prix, utilisateurid) VALUES (?, ?, ?, ?, ?);");
+	$statement = $db->prepare("INSERT INTO profilfabricant(adresse, Nom, specialite, prix, utilisateurId) VALUES (?, ?, ?, ?, ?);");
 	$statement->execute([$adresse, $nom, $specialite, $prix, $uid]);
 	// TODO: Gestion des erreurs.
 };

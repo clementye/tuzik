@@ -40,7 +40,7 @@ ENGINE = InnoDB;
 -- Table `TuZik?`.`profilmagasin`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `TuZik?`.`profilmagasin` (
-  `NumMagasin` BIGINT NOT NULL,
+  `NumMagasin` BIGINT NOT NULL AUTO_INCREMENT,
   `adresse` VARCHAR(45) NOT NULL,
   `nom` VARCHAR(45) NOT NULL,
   `horaires` VARCHAR(45) NOT NULL,
@@ -58,7 +58,7 @@ ENGINE = InnoDB;
 -- Table `TuZik?`.`profilfabricant`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `TuZik?`.`profilfabricant` (
-  `NumFabricant` BIGINT NOT NULL,
+  `NumFabricant` BIGINT NOT NULL AUTO_INCREMENT,
   `adresse` VARCHAR(45) NULL DEFAULT NULL,
   `Nom` VARCHAR(45) NOT NULL,
   `specialite` VARCHAR(45) NULL DEFAULT NULL,
@@ -102,6 +102,21 @@ CREATE TABLE IF NOT EXISTS `TuZik?`.`article` (
     FOREIGN KEY (`idCategorie`)
     REFERENCES `TuZik?`.`categorie` (`id`)
     ON DELETE SET NULL
+    ON UPDATE CASCADE)
+ENGINE = InnoDB;
+
+-- -----------------------------------------------------
+-- Table `TuZik?`.`photo_article`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `TuZik?`.`photo_article` (
+  `id` BIGINT NOT NULL AUTO_INCREMENT,
+  `articleId` BIGINT NOT NULL,
+  `image` VARCHAR(75) NOT NULL,
+  PRIMARY KEY (`id`),
+  CONSTRAINT `fk_photo_article_article`
+    FOREIGN KEY (`articleId`)
+    REFERENCES `TuZik?`.`article` (`id`)
+    ON DELETE CASCADE
     ON UPDATE CASCADE)
 ENGINE = InnoDB;
 

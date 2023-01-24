@@ -91,12 +91,34 @@
   };
 
   $afficher_mes_articles = function (string $UID) use ($db) {
-    $statement = $db->prepare("SELECT AR.Titre AS Titre, AR.quantite AS Quantité, AR.prix AS Prix, CAT.Titre AS Catégorie, CAR.shippingStatus AS Shipping
+    $statement = $db->prepare("SELECT AR.Titre AS Titre, AR.quantite AS Quantité, AR.prix AS Prix, CAT.Titre AS Catégorie
     FROM categorie AS CAT JOIN article AS AR ON CAT.id = AR.idCategorie
-    JOIN commande_article AS CAR ON AR.id = CAR.produitId
     WHERE AR.utilisateurId = ?;");
     $statement->execute([$UID]);
+    $result=$statement->fetchAll(PDO::FETCH_OBJ);
+    return $result;
+  };
+
+  $ajouter_article = function (string $Titre, string $Prix, string $Quantite, string $Categorie, string $UID) use ($db) {
+    $statement = $db->prepare("INSERT INTO article(Titre, prix, quantite, idCategorie, utilisateurId)
+    VALUES (?, ?, ?, ?, ?);");
+    $statement->execute([$Titre, $Prix, $Quantite, $Categorie, $UID]);
+  };
+
+  $afficher_article_id = function (string $Titre) use ($db) {
+    $statement = $db->prepare("SELECT id
+      FROM article
+      WHERE Titre = ?
+      ORDER BY id DESC
+      LIMIT 1");
+    $statement->execute([$Titre]);
     $result=$statement->fetch(PDO::FETCH_OBJ);
     return $result;
+  };
+
+  $ajouter_photo = function (string $Image, string $AID) use ($db) {
+    $statement = $db->prepare("INSERT INTO photo_article(image, articleId)
+    VALUES (?, ?);");
+    $statement->execute([$Image, $AID]);
   };
  ?>
