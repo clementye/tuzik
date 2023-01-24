@@ -26,18 +26,23 @@
         foreach ($panier as $PAN){
           require_once "../models/photo.php";
           $photo = $photo_article($PAN->id);
-          echo '<input type="hidden" name="articleid" value="'.$PAN->id.'">
-                <input type="hidden" name="quantité" value="'.$PAN->Quantité.'">
+          echo '<input type="hidden" id="articleid" name="articleid" value="'.$PAN->id.'"/>
+                <input type="hidden" id="quantité" name="quantité" value="'.$PAN->Quantité.'"/>
                 <img src="../uploaded_img/'.$photo->image.'" alt="">
                 <div class="titre">'.$PAN->Titre.'</div>
-                <div class="quantité">'.$PAN->Quantité.'
-                <div class="prixTot">'.$PAN->prixTotal.'</div>
-                <div class="texte"><label for="nom">Adresse de livraison :</label>
-          			<input type="adresse" id="adresse" name="adresse" /></div>
-                </div>';
+                <div class="quantité">'.$PAN->Quantité.'</div>
+                <div class="prixTot">€/'.$PAN->prixTotal.'</div>';
         };
      ?>
-     <input type="hidden" name="grandtotal" value="<?php $total->prixTotal ?>">
-     <div class="grandtotal"><?php echo $total->prixTotal ?></div>
-     <input type="submit" value="payer" name="payer">
+
+     <div class="texte"><label for="nom">Adresse de livraison :</label>
+     <input type="adresse" id="adresse" name="adresse" /></div>
+     <div class="grandtotal"> Total :€/<?php $GT=$total->prixTotal; echo $GT;?>
+     <input type="hidden" id="grandtotal" name="grandtotal" value="<?php echo $GT;?>" /></div>
+     <input type="submit" value="payer" name="payer" class="btn">
   </form>
+
+  <script src="../js/script.js"></script>
+
+  </body>
+  </html>

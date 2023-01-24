@@ -35,12 +35,10 @@
            <img src="../uploaded_img/'.$photo->image.'" alt="">
            <div class="name">'.$PAN->Titre.'</div>
            <div class="flex">
-           <div class="prixUnit">$/'.$PAN->PrixUnitaire.'</div>
            <div class="prixTot">$/'.$PAN->prixTotal.'</div>
            <input type="number" name="Quantité" class="Quantité" min="'.$PAN->Quantité.'" max="0" onkeypress="if(this.value.length == 2) return false;" value="">
-              <button type="submit" class="fas fa-edit" name="modification_qty"></button>
-           </div>
-           <div class="sub-total"> sub total : <span>$/-</span> </div>
+           <!/div>
+           <div class="sub-total"> Prix Unitaire : <span>$/'.$PAN->PrixUnitaire.'</span> </div>
            <input type="submit" value="supprimer" class="delete-btn" name="delete">
         </form>
         ';
@@ -63,7 +61,7 @@
    </div>
 
    <div class="panier-total">
-      <p>grand total : <span>$/<?php echo $total->prixTotal; ?></span></p> <!--Faudra faire que le prix soit plus gros, on le voit pas assez.-->
+      <p>Total : <span>$/<?php echo $total->prixTotal; ?></span></p> <!--Faudra faire que le prix soit plus gros, on le voit pas assez.-->
       <a href="../controllers/boutique.php" class="option-btn">continuer les achats</a>
       <a href="../controllers/supprimerpanier.php" class="delete-btn " onclick="return confirm('supprimer tout du panier ?');">supprimer tous les articles</a>
       <a href="../controllers/payer.php" class="btn ">passer à la caisse</a>

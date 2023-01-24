@@ -2,9 +2,9 @@
     require_once "../models/payer.php";
     session_start();
     $SID = ceil(rand(10000, 50000));
-    $date = "0000000";
+    $dateCO = "00000000";
     if (!isset($_GET["validate"])){
-      $création_commande($_SESSION["user-id"], $SID, $_POST["adresse"], $_POST["grandtotal"], $date);
+      $création_commande($_SESSION["user-id"], $SID, $_POST["adresse"], $_POST["grandtotal"], $dateCO);
       $CID = $récupérer_ID_commande($_SESSION["user-id"]);
       foreach ($CID as $CI){
         $création_commande_article($_POST["articleid"], $_POST["quantité"], $CI->id);

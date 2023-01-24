@@ -27,6 +27,7 @@
   <a href="../controllers/commandes.php">Voir mes commandes</a>
   <a href="../controllers/accueil.php">Retourner à l'accueil</a>
 
+  <script src="../js/script.js"></script>
 
 </body>
 </html>

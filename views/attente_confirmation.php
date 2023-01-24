@@ -13,7 +13,7 @@
 <?php include '../models/header.php'; ?>
 
 
-<?php header( "refresh:8;url=../controllers/validation.php?validate=validate")  ?>
+<?php header( "refresh:5;url=../controllers/validation.php?validate=validate")  ?>
 
 
 </body>
