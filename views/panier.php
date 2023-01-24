@@ -23,8 +23,6 @@
         }
     ?>
 
-   
-
    <?php
       foreach ($panier as $PAN){
         require_once "../models/photo.php";
@@ -37,7 +35,7 @@
            <div class="name">'.$PAN->Titre.'</div>
            <div class="flex">
            <div class="prixTot">$/'.$PAN->prixTotal.'</div>
-           <input type="number" name="Quantité" class="Quantité" min="'.$PAN->Quantité.'" max="0" onkeypress="if(this.value.length == 2) return false;" value="">
+           <input type="number" name="Quantité" class="Quantité" min="1" max="'.$PAN->Quantité.'" onkeypress="if(this.value.length == 2) return false;" value="">
            </div>
            <div class="sub-total"> Prix Unitaire : <span>$/'.$PAN->PrixUnitaire.'</span> </div>
            <input type="submit" value="supprimer" class="delete-btn" name="delete">
@@ -46,19 +44,6 @@
         </div>';
       };
    ?>
-  <!-- <form action="" method="post" class="box">
-      <input type="hidden" name="panier_id" value="">
-      <a href="fiche_produit.php?pid=" class="fas fa-eye"></a>
-      <img src="../uploaded_img/" alt="">
-      <div class="name"></div>
-      <div class="flex">
-         <div class="prix">$/-</div>
-         <input type="number" name="qty" class="qty" min="1" max="99" onkeypress="if(this.value.length == 2) return false;" value="">
-         <button type="submit" class="fas fa-edit" name="modification_qty"></button>
-      </div>
-      <div class="sub-total"> sub total : <span>$/-</span> </div>
-      <input type="submit" value="delete item" onclick="return confirm('supprimer cela du panier ?');" class="delete-btn" name="delete">
-   </form>-->
 
    </div>
 

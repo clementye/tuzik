@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require_once "../models/articles.php";
 if (!isset($_GET['categorie']) && !isset($_POST['categorie'])){
   $articles = $afficher_articles_all();

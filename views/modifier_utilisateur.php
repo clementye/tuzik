@@ -32,13 +32,13 @@
         <input type="prenom" id="prenom" name="prenom" /></div>
         <br />
         <div class="texte"><label for="email" value="<?php echo $_SESSION["user-email"]; ?>">Email :</label>
-        <input type="email" id="email" name="email" /></div>
+        <input type="email" id="email" name="email" required/></div>
         <br />
         <div class="texte"><label for="telephone">Téléphone :</label>
         <input type="telephone" id="telephone" name="telephone" /></div>
         <br />
         <div class="texte"><label for="password">Mot de passe :</label>
-        <input type="password" id="password" name="password" /></div>
+        <input type="password" id="password" name="password" required/></div>
         <br />
         <div class="texte"><label for="newPassword">Nouveau mot de passe :</label>
         <input type="newPassword" id="newPassword" name="newPassword" /></div>

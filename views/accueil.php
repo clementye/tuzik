@@ -17,21 +17,15 @@
 <div class="accueil-bg">
 
 <section class="accueil">
-
    <div class="swiper accueil-slider">
-
    <div class="swiper-wrapper">
      <div class="swiper-slide slide">
        <div class="content">
        </div>
      </div>
-
    </div>
-
       <div class="swiper-pagination"></div>
-
    </div>
-
 </section>
 
 </div>
@@ -74,25 +68,27 @@
    $articles = $afficher_articles_last();
 
      foreach ($articles as $AR) {
+       require_once "../models/photo.php";
+       $photo = $photo_article($AR->id);
      echo '<div class="box-container">
-     <form action="../controllers/ajoutpanier.php" method="post" class="box">
      <div class="box">
+     <form action="../controllers/ajoutpanier.php" method="post" class="box">
      <input type="hidden" id="titre" name="titre" value="'.$AR->id.'"/>'.$AR->Titre.'
      <br><select class="quantite" name="quantite">
      </select>
       <button class="fas fa-heart" type="submit" name="ajouter_au_liste_de_souhaits"></button>
-      <img src="../uploaded_img/" alt="">
+      <img src="../uploaded_img/'.$photo->image.'" alt="">
       <div class="name"></div>
       <div class="flex">
          <div class="prix"><span>€</span><span>/'.$AR->prix.'</span></div>
-         <input type="number" name="qty" class="qty" min="1" max="99" onkeypress="if(this.value.length == 2) return false;" value="1">
+         <input type="number" name="quantite" class="quantite" min="1" max="'.$AR->quantite.'" onkeypress="if(this.value.length == 2) return false;" value="1">
       </div>
      <input type="submit" value="ajouter au panier" class="btn" name="ajouter_au_panier">
      </form>
+     </div>
      </div>';
    };
     ?>
-
    </div>
 
    <div class="swiper-pagination"></div>

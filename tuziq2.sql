@@ -131,7 +131,7 @@ CREATE TABLE IF NOT EXISTS `TuZik?`.`Commande` (
   `sessionId` VARCHAR(100) NOT NULL,
   `shipping` VARCHAR(100) NOT NULL DEFAULT 0,
   `total` FLOAT NOT NULL DEFAULT 0,
-  `dateCommande` FLOAT NOT NULL DEFAULT 0,
+  `dateCommande` VARCHAR(25) NOT NULL DEFAULT 0,
   `shippingStatus` varchar(20) NOT NULL DEFAULT 'pending',
   PRIMARY KEY (`id`),
   CONSTRAINT `fk_Commande_utilisateur`

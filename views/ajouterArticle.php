@@ -26,15 +26,15 @@
       <div class="flex">
          <div class="inputBox">
             <span>Nom du produit</span>
-            <input type="text" class="box" required maxlength="100" id="Titre" name="Titre">
+            <input type="text" class="box" required maxlength="100" id="Titre" name="Titre" required>
          </div>
          <div class="inputBox">
             <span>Quantité</span>
-            <input type="text" class="box" required maxlength="100" id="Quantité" name="Quantité">
+            <input type="text" class="box" required maxlength="100" id="Quantité" name="Quantité" required>
          </div>
          <div class="inputBox">
             <span>Prix du produit (unitaire)</span>
-            <input type="text" class="box" required maxlength="100" id="Prix" name="Prix">
+            <input type="text" class="box" required maxlength="100" id="Prix" name="Prix" required>
          </div>
         <div class="inputBox">
             <span>Image (Une seule possible)</span>

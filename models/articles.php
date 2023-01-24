@@ -121,4 +121,9 @@
     VALUES (?, ?);");
     $statement->execute([$Image, $AID]);
   };
+
+  $supprimer_article_panier = function (string $AID) use ($db) {
+    $statement = $db->prepare("DELETE FROM panier_article WHERE produitId = ?;");
+    $statement->execute([$AID]);
+  }
  ?>

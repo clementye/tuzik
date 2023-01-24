@@ -43,6 +43,10 @@
          <a href="panier.php"><i class="fas fa-shopping-cart"></i><span>(<?= $total_panier_counts; ?>)</span></a>
          <div id="user-btn" class="fas fa-user"></div>
 
+
+         <?php
+          if (isset($_SESSION["user-id"])) {
+         ?>
       <div class="profil">
          <div class="flex-btn">
          <a href="../controllers/espace_membres.php" class="btn">Espace membres</a>
@@ -51,6 +55,20 @@
          <a href="../controllers/deconnexion.php" class="delete-btn">deconnexion</a>
        </div>
      </div>
+     <?php
+        } else {
+      ?>
+      <div class="profil">
+         <div class="flex-btn">
+         <a href="../views/connexion.php" class="btn">Connexion</a>
+         <a href="../views/inscription.php" class="btn">Inscription</a>
+       </div>
+      </div>
+
+      <?php
+          };
+      ?>
+
 
    </section>
 

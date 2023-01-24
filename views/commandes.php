@@ -23,11 +23,10 @@
    foreach ($mesCommandes as $MC) {
    echo '
    <div class="box">
-      <p>Id : <span>'.$MC->Id.'</span></p>
+      <p>Numéro de commande : <span>'.$MC->Id.'</span></p>
       <p>Date : <span>'.$MC->Date.'</span></p>
-      <p>Vendeur : <span>'.$MC->Vendeur.'</span></p>
       <p>Total : <span>'.$MC->Total.'</span></p>
-      <p>Status : <span>'.$MC->Statue.'</span></p>
+      <p>Status de Livraison: <span>'.$MC->Statue.'</span></p>
    </div>';
       }
    ?>

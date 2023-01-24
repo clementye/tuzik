@@ -1,4 +1,5 @@
 <?php
+  session_start();
   require_once "../models/utilisateur.php";
 
   $changement = $recuperer_utilisateur($_POST["email"]);
