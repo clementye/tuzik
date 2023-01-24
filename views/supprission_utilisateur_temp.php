@@ -36,7 +36,7 @@ background: url("../images/magasin-bg.jpg") no-repeat center center fixed;
     <img src="/images/newtuzik.png" alt="logo" style="width:10.5%;height:10.5%;float:top-left;">
   </logo>
         <div class=q>
-        <h0 class="texte">Êtes-vous sûr?</h0>
+        <h0 class="texte">Attention ! Vous allez définitivement supprimer votre compte. Confirmer?</h0>
         <br>
         </br>
     <form action="../controllers/suppression_utilisateur.php" method="post">

@@ -24,9 +24,11 @@
   <form class="" action="../controllers/validation.php" method="post">
     <?php
         foreach ($panier as $PAN){
+          require_once "../models/photo.php";
+          $photo = $photo_article($PAN->id);
           echo '<input type="hidden" name="articleid" value="'.$PAN->id.'">
                 <input type="hidden" name="quantité" value="'.$PAN->Quantité.'">
-                <img src="../uploaded_img/" alt="">
+                <img src="../uploaded_img/'.$photo->image.'" alt="">
                 <div class="titre">'.$PAN->Titre.'</div>
                 <div class="quantité">'.$PAN->Quantité.'
                 <div class="prixTot">'.$PAN->prixTotal.'</div>

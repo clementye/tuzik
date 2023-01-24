@@ -9,14 +9,14 @@
   };
 
   $afficher_articles_précis = function (string $catégorie) use ($db) {
-    $statement = $db->prepare("SELECT * FROM article WHERE quantite > 0 ORDER BY id DESC;");
+    $statement = $db->prepare("SELECT * FROM article WHERE quantite > 0 AND idCategorie = ?;");
     $statement->execute([$catégorie]);
     $result = $statement->fetchAll(PDO::FETCH_OBJ);
     return $result;
   };
 
   $afficher_articles_last = function () use ($db) {
-    $statement = $db->prepare("SELECT * FROM article WHERE quantite > 0;");
+    $statement = $db->prepare("SELECT * FROM article WHERE quantite > 0 ORDER BY id DESC LIMIT 10;");
     $statement->execute();
     $result = $statement->fetchAll(PDO::FETCH_OBJ);
     return $result;
@@ -91,7 +91,7 @@
   };
 
   $afficher_mes_articles = function (string $UID) use ($db) {
-    $statement = $db->prepare("SELECT AR.Titre AS Titre, AR.quantite AS Quantité, AR.prix AS Prix, CAT.Titre AS Catégorie
+    $statement = $db->prepare("SELECT AR.id AS id, AR.Titre AS Titre, AR.quantite AS Quantité, AR.prix AS Prix, CAT.Titre AS Catégorie
     FROM categorie AS CAT JOIN article AS AR ON CAT.id = AR.idCategorie
     WHERE AR.utilisateurId = ?;");
     $statement->execute([$UID]);

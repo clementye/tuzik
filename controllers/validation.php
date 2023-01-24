@@ -20,6 +20,7 @@
         $diminuer_article($QTY->Quantité, $QTY->AID);
       };
       $supprimer_panier($_SESSION["user-id"]);
+      $facture = $afficher_facture($_SESSION["user-id"]);
       $confirmation = "Votre achat s'est bien effectué.";
       require_once "../views/confirmation_achat.php";
     }

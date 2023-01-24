@@ -44,8 +44,10 @@
    require_once "../models/articles.php";
   $mesArticles = $afficher_mes_articles($_SESSION["user-id"]);
     foreach ($mesArticles as $art) {
+      require_once "../models/photo.php";
+      $photo = $photo_article($art->id);
       echo '<th><form action="../controllers/supprimerArticle.php" method="post" class="box">
-        <img src="../uploaded_img/" alt="">
+        <img src="../uploaded_img/'.$photo->image.'" alt="">
         <input type="hidden" name="articleid" value="'.$art->Titre.'"><div class="prixUnit">'.$art->Titre.'A</div>
         <input type="hidden" name="articleid" value="'.$art->Quantité.'"><div class="prixTot">'.$art->Quantité.'</div>
         <input type="hidden" name="articleid" value="'.$art->Prix.'"><div class="prixTot">$/'.$art->Prix.'</div>

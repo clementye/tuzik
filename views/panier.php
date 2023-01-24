@@ -26,16 +26,13 @@
    <div class="box-container">
 
    <?php
-      /*function createSelectBox($optionCount){
-         for($idx=1; $idx <= $optionCount; $idx++){
-             $out .= '<option id="quantite" name="quantite" value='.$idx.' >' . $idx . '</option>';
-         }
-         return $out;};*/
       foreach ($panier as $PAN){
+        require_once "../models/photo.php";
+        $photo = $photo_article($PAN->id);
         echo '
         <form action="../controllers/supprimerArticlePanier.php" method="post" class="box">
            <input type="hidden" name="articleid" value="'.$PAN->id.'">
-           <img src="../uploaded_img/" alt="">
+           <img src="../uploaded_img/'.$photo->image.'" alt="">
            <div class="name">'.$PAN->Titre.'</div>
            <div class="flex">
            <div class="prixUnit">$/'.$PAN->PrixUnitaire.'</div>

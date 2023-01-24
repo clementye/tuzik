@@ -41,9 +41,21 @@
       $statement->execute([$DimQuantité, $AID]);
     };
 
-    $diminuer_article = function (string $UID) use ($db) {
+    $supprimer_panier = function (string $UID) use ($db) {
       $statement = $db->prepare("DELETE FROM panier_article WHERE utilisateurId = ?");
       $statement->execute([$UID]);
+    };
+
+    $afficher_facture = function (string $UID) use ($db) {
+      $statement = $db->prepare("SELECT CO.sessionId AS Session, CO.shipping AS Shipping, CO.total AS GrandTotal, CO.dateCommande AS DateCo, UT.Nom AS Nom, UT.Prenom AS Prenom, UT.telephone AS Tèl, UT.email AS Email
+        FROM commande AS CO JOIN utilisateur AS UT
+        ON CO.utilisateurId = UT.id
+        WHERE UT.id = ?
+        ORDER BY CO.id DESC
+        LIMIT 1;");
+      $statement->execute([$UID]);
+      $result = $statement->fetch(PDO::FETCH_OBJ);
+      return $result;
     };
 
  ?>

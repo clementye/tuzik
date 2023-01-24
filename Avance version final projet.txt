@@ -1,25 +1,7 @@
-À faire :
-Liste des souhaits (models)
-Magasin (views)
-Contacter (views, models, controllers)
+UID, SID, SHIP, Tot, Date FROM commande
+Nom, Prenom, Tel, Email FROM utilisateur
 
-À retravailler :
-Panier (quasi tout)
-recherche (pas encore vérif, mais surement le lien avec la database)
-Fiche_produit (mais en dernier, pas prioritaire)
-commandes (l'autre partie SQL, pas prioritaire)
-controllers/liste_de_souhaits.php (juste une vérif si co ou pas)
-ajouter article (controllers, views, models)
-
-À designer :
-accueil
-commandes
-boutique
-
-À supprimer :
-views/produits.php
-views/categorie.php
-controllers/produits
-controllers/categorie.php
-
-Pour les tests, on fera les derniers LUNDI!
+SELECT CO.sessionId AS Session, CO.shipping AS Shipping, CO.total AS GrandTotal, 
+CA.dateCommande AS DateCo, UT.Nom, UT.Prenom, UT.Tel, UT.email
+FROM commande AS CO JOIN utilisateur AS UT
+ON CO.utilisateurId = UT.id

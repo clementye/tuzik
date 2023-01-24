@@ -48,25 +48,22 @@
    <?php
    //l'oeil était de trop, c'est mieux de faire que le titre du produit soit aussi un lien cliquable pour aller voir plus précisément le produit MAIS, comme manque de temps, on ne le fera pas.
    //Et pour l'image, j'ai pas encore fait, donc on ce sera le dernier truc que je ferai lundi.
-   function createSelectBox($optionCount){
-      for($idx=1; $idx <= $optionCount; $idx++){
-          $out .= '<option id="quantite" name="quantite" value='.$idx.' >' . $idx . '</option>';
-      }
-      return $out;}
    foreach ($articles as $AR) {
+     require_once "../models/photo.php";
+     $photo = $photo_article($AR->id);
+
    echo '<div class="box-container">
    <form action="../controllers/ajoutpanier.php" method="post" class="box">
    <div class="box">
    <input type="hidden" id="titre" name="titre" value="'.$AR->id.'"/>'.$AR->Titre.'
-   <br><select class="quantite" name="quantite">';
-    echo createSelectBox($AR->quantite);
-    echo '</select>
+   <br><select class="quantite" name="quantite">
+   </select>
     <button class="fas fa-heart" type="submit" name="ajouter_au_liste_de_souhaits"></button>
-    <img src="../uploaded_img/" alt="">
+    <img src="../uploaded_img/'.$photo->image.'" alt=""
     <div class="name"></div>
     <div class="flex">
        <div class="prix"><span>€</span><span>/'.$AR->prix.'</span></div>
-       <input type="number" name="qty" class="qty" min="1" max="99" onkeypress="if(this.value.length == 2) return false;" value="1">
+       <input type="number" name="quantite" class="quantite" min="1" max="'.$AR->quantite.'" onkeypress="if(this.value.length == 2) return false;" value="1">
     </div>
    <input type="submit" value="ajouter au panier" class="btn" name="ajouter_au_panier">
    </form>

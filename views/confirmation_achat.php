@@ -15,6 +15,10 @@
 
 <?php if(isset($confirmation)){
   echo $confirmation."</br>";
+  echo "Nom :".$facture->Nom."          Session :".$facture->Session."</br>";
+  echo "Prénom :".$facture->Prenom."        Adresse de livraison : ".$facture->Shipping."</br>";
+  echo "Téléphone :".$facture->Tèl."        Total : ".$facture->GrandTotal."</br>";
+  echo "Email :".$facture->Email."        Date de facturation : ".$facture->DateCo."</br>";
 } else {
   echo "Problème lors du paiement.</br> Une erreur de connexion avec le serveur est survenue.</br> Veuillez réessayer plus tard.</br>";
 }

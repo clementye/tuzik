@@ -46,8 +46,8 @@
       <div class="profil">
          <div class="flex-btn">
          <a href="../controllers/espace_membres.php" class="btn">Espace membres</a>
-            <a href="../controllers/commandes.php" class="option-btn">test</a>
-            <a href="../controllers/articles.php" class="option-btn">test</a>
+            <a href="../controllers/commandes.php" class="btn">Mes Commandes</a>
+            <a href="../controllers/articles.php" class="btn">Mes Articles</a>
          <a href="../controllers/deconnexion.php" class="delete-btn">deconnexion</a>
        </div>
      </div>
