@@ -31,32 +31,39 @@
    <?php
      if(isset($_POST['recherche_box']) OR isset($_POST['recherche_btn'])){
      $recherche_box = $_POST['recherche_box'];
-     $select_produits = $db->prepare("SELECT * FROM `produits` WHERE name LIKE '%{$recherche_box}%'"); 
+     $select_produits = $db->prepare("SELECT * FROM `article` WHERE `Titre` LIKE '%{$recherche_box}%'"); 
      $select_produits->execute();
      if($select_produits->rowCount() > 0){
       while($fetch_produits = $select_produits->fetch(PDO::FETCH_ASSOC)){
    ?>
-   <form action="" method="post" class="box">
-      <input type="hidden" name="pid" value="<?= $fetch_produits['id']; ?>">
-      <input type="hidden" name="name" value="<?= $fetch_produits['name']; ?>">
-      <input type="hidden" name="prix" value="<?= $fetch_produits['prix']; ?>">
-      <input type="hidden" name="image" value="<?= $fetch_produits['image_01']; ?>">
-      <button class="fas fa-heart" type="submit" name="ajouter_au_liste_de_souhaits"></button>
-      <a href="fiche_produit.php?pid=<?= $fetch_produits['id']; ?>" class="fas fa-eye"></a>
-      <img src="../uploaded_img/<?= $fetch_produits['image_01']; ?>" alt="">
-      <div class="name"><?= $fetch_produits['name']; ?></div>
-      <div class="flex">
-         <div class="prix"><span>$</span><?= $fetch_produits['prix']; ?><span>/-</span></div>
-         <input type="number" name="qty" class="qty" min="1" max="99" onkeypress="if(this.value.length == 2) return false;" value="1">
-      </div>
-      <input type="submit" value="ajouter au panier" class="btn" name="ajouter_au_panier">
-   </form>
    <?php
-         }
-      }else{
-         echo '<p class="empty">aucun produit trouvé !</p>';
+   require_once "../models/articles.php";
+   $articles = $afficher_articles_last();
+     foreach ($articles as $AR) {
+       require_once "../models/photo.php";
+       $photo = $photo_article($AR->id);
+     echo '<div class="box-container">
+     <div class="box">
+     <form action="../controllers/ajoutpanier.php" method="post" class="box">
+     <input type="hidden" id="titre" name="titre" value="'.$AR->id.'"/>'.$AR->Titre.'
+     <br><select class="quantite" name="quantite">
+     </select>
+      <button class="fas fa-heart" type="submit" name="ajouter_au_liste_de_souhaits"></button>
+      <img src="../uploaded_img/'.$photo->image.'" alt="">
+      <div class="name"></div>
+      <div class="flex">
+         <div class="prix"><span>€</span><span>/'.$AR->prix.'</span></div>
+         <input type="number" name="quantite" class="quantite" min="1" max="'.$AR->quantite.'" onkeypress="if(this.value.length == 2) return false;" value="1">
+      </div>
+     <input type="submit" value="ajouter au panier" class="btn" name="ajouter_au_panier">
+     </form>
+     </div>
+     </div>';
+   };
+
       }
    }
+}
    ?>
 
    </div>
