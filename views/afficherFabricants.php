@@ -20,7 +20,7 @@
 <section class="">
 <parent>
 
-   <table  border="1" cellpading="7" width=50% style="position:absolute; font-size:large">
+   <table  border="1" cellpading="7" width=75% style="position:absolute; font-size:large">
 
       <tr>
          <th>Nom</th>
@@ -40,7 +40,7 @@
       <th> ". $fab->specialite." "."</th>
       <th> ". $fab->adresse." "."</th>
       <th> "."€/". $fab->prix."/Heure"."</th>
-      </tr> ";
+      ";
       if (isset($_SESSION["user-id"])){
         echo "<th> ".$fab->email."</th></tr> ";
       } else {

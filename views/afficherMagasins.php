@@ -34,9 +34,9 @@
     foreach ($magasin as $mag) {
       echo '
       <tr>
-      <th>'. $fab->Nom." "."</th>
-      <th> ". $fab->adresse." "."</th>
-      <th> ". $fab->horaires." "."</th>
+      <th>'. $mag->Nom." "."</th>
+      <th> ". $mag->adresse." "."</th>
+      <th> ". $mag->horaires." "."</th>
       </tr> ";
 
   }

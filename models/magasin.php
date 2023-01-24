@@ -9,7 +9,8 @@ $ajouter_magasin = function (string $adresse, string $nom, string $horaires, str
 
 $afficher_magasin = function () use($db){
   $statement = $db->prepare("SELECT Nom, adresse, horaires FROM profilmagasin");
-	$result = $statement->fetchAll(PDO::FETCH_OBJ);
+  $statement->execute([]);
+  $result = $statement->fetchAll(PDO::FETCH_OBJ);
 	return $result;
 };
 
