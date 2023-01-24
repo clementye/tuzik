@@ -36,6 +36,8 @@ background: url("../images/musicien-bg.jpg") no-repeat center center fixed;
 				echo "<br>";
 			} ?>
             <h1 class="texte">Inscription</h1>
+            <h4 class="texte">Entrez vos informations.</h4>
+
             <div class="texte"><label for="adresse">Adresse :</label>
 			<input type="adresse" id="adresse" name="adresse" /></div>
             <br />
