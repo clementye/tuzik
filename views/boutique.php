@@ -54,6 +54,7 @@
     </div>
    <input type="submit" value="ajouter au panier" class="btn" name="ajouter_au_panier">
    </form>
+   </div>
    </div>';
       }
    ?>

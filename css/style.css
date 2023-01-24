@@ -813,7 +813,7 @@ section{
    color:var(--red);
 }
 
-.cart-total .box-container{
+.shopping-cart .box-container{
    display: inline-block;
    grid-template-columns: repeat(auto-fit, 53rem);
    gap:10rem;
