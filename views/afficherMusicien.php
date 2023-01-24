@@ -19,7 +19,7 @@
 <section class="">
 <parent>
 
-   <table  border="1" cellpading="7" width=50% style="margin-left:5%; position:center; font-size:large">
+   <table  border="1" cellpading="5" width=85% style="margin-left:5%; position:center; font-size:large">
 
       <tr>
          <th>Nom</th>
@@ -43,7 +43,7 @@
       <th> ". $mus->bio." "."</th>
       <th>";
       if (isset($_SESSION["user-id"])){
-        echo "<th> ".$mus->email."</th></tr> ";
+        echo " ".$mus->email."</tr> ";
       } else {
         echo "<th> Veuillez-vous connecter</th></tr> ";
       };
