@@ -3,7 +3,7 @@
     require_once "../models/articles.php";
 
     $filename = $_FILES["image"]["name"];
-    $tempname = $_FILES["uploadfile"]["tmp_name"];
+    $tempname = $_FILES["image"]["tmp_name"];
     $folder = "../imageArticle/" . $filename;
 
     $ajouter_article($_POST["Titre"], $_POST["Prix"], $_POST["Quantité"], $_POST["Catégorie"], $_SESSION["user-id"]);
