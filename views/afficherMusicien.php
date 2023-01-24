@@ -40,10 +40,9 @@
       <th> ". $mus->niveau." "."</th>
       <th> ". $mus->adresse." "."</th>
       <th> ". $mus->instrument." "."</th>
-      <th> ". $mus->bio." "."</th>
-      <th>";
+      <th> ". $mus->bio." "."</th>";
       if (isset($_SESSION["user-id"])){
-        echo " ".$mus->email."</tr> ";
+        echo "<th>".$mus->email;
       } else {
         echo "<th> Veuillez-vous connecter</th></tr> ";
       };
@@ -52,7 +51,7 @@
    ?>
     </table>
    </parent>
-   
+
    <script src="../js/script.js"></script>
 
 </body>
