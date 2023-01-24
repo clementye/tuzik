@@ -71,13 +71,13 @@
        require_once "../models/photo.php";
        $photo = $photo_article($AR->id);
      echo '<div class="box-container">
-     <div class="box">
      <form action="../controllers/ajoutpanier.php" method="post" class="box">
+     <div class="box">
      <input type="hidden" id="titre" name="titre" value="'.$AR->id.'"/>'.$AR->Titre.'
      <br><select class="quantite" name="quantite">
      </select>
       <button class="fas fa-heart" type="submit" name="ajouter_au_liste_de_souhaits"></button>
-      <img src="../uploaded_img/'.$photo->image.'" alt="">
+      <img src="../imageArticle/'.$photo->image.'" alt="">
       <div class="name"></div>
       <div class="flex">
          <div class="prix"><span>€</span><span>/'.$AR->prix.'</span></div>
@@ -138,10 +138,10 @@ var swiper = new Swiper(".produits-slider", {
         slidesPerView: 2,
       },
       768: {
-        slidesPerView: 2,
+        slidesPerView: 3,
       },
       1024: {
-        slidesPerView: 3,
+        slidesPerView: 4,
       },
    },
 });

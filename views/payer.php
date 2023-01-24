@@ -28,7 +28,7 @@
           $photo = $photo_article($PAN->id);
           echo '<input type="hidden" id="articleid" name="articleid" value="'.$PAN->id.'"/>
                 <input type="hidden" id="quantité" name="quantité" value="'.$PAN->Quantité.'"/>
-                <img src="../uploaded_img/'.$photo->image.'" alt="">
+                <img src="../imageArticle/'.$photo->image.'" alt="">
                 <div class="titre">'.$PAN->Titre.'</div>
                 <div class="quantité">'.$PAN->Quantité.'</div>
                 <div class="prixTot">€/'.$PAN->prixTotal.'</div>';

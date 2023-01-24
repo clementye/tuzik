@@ -33,14 +33,18 @@
            // $count_liste_de_souhaits_items->execute([$user_id]);
             $total_liste_de_souhaits_counts = $count_liste_de_souhaits_items->rowCount();
 
-            $count_panier_items = $db->prepare("SELECT * FROM `panier` WHERE user_id = ?");
-            //$count_panier_items->execute([$user_id]);
-            $total_panier_counts = $count_panier_items->rowCount();
+            require_once "../models/articles.php";
+              $nombre = $nombre_article_panier;
+              if (isset($nombre->NBR)){
+                $Panier = $nombre->NBR;
+              } else {
+                $Panier = '0';
+              }
          ?>
          <div id="menu-btn" class="fas fa-bars"></div>
          <a href="recherche.php"><i class="fas fa-search"></i></a>
          <a href="liste_de_souhaits.php"><i class="fas fa-heart"></i><span>(<?= $total_liste_de_souhaits_counts; ?>)</span></a>
-         <a href="panier.php"><i class="fas fa-shopping-cart"></i><span>(<?= $total_panier_counts; ?>)</span></a>
+         <a href="panier.php"><i class="fas fa-shopping-cart"></i><span>(<?= $Panier; ?>)</span></a>
          <div id="user-btn" class="fas fa-user"></div>
 
 

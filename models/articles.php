@@ -125,5 +125,12 @@
   $supprimer_article_panier = function (string $AID) use ($db) {
     $statement = $db->prepare("DELETE FROM panier_article WHERE produitId = ?;");
     $statement->execute([$AID]);
-  }
+  };
+
+  $nombre_article_panier = function (string $UID) use ($db) {
+    $statement = $db->prepare("SELECT COUNT(produitId) AS NBR FROM panier_article WHERE utilisateurId = ? LIMIT 1;");
+    $statement->execute([$UDI]);
+    $result = $statement->fetch(PDO::FETCH_OBJ);
+    return $result;
+  };
  ?>

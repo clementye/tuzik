@@ -5,7 +5,7 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>page de recherche</title>
-   
+
    <!-- font awesome cdn link  -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
@@ -14,7 +14,7 @@
 
 </head>
 <body>
-   
+
 <?php include '../models/header.php'; ?>
 
 <section class="recherche-form">
@@ -31,7 +31,7 @@
    <?php
      if(isset($_POST['recherche_box']) OR isset($_POST['recherche_btn'])){
      $recherche_box = $_POST['recherche_box'];
-     $select_produits = $db->prepare("SELECT * FROM `article` WHERE `Titre` LIKE '%{$recherche_box}%'"); 
+     $select_produits = $db->prepare("SELECT * FROM `article` WHERE `Titre` LIKE '%{$recherche_box}%'");
      $select_produits->execute();
      if($select_produits->rowCount() > 0){
       while($fetch_produits = $select_produits->fetch(PDO::FETCH_ASSOC)){
@@ -49,7 +49,7 @@
      <br><select class="quantite" name="quantite">
      </select>
       <button class="fas fa-heart" type="submit" name="ajouter_au_liste_de_souhaits"></button>
-      <img src="../uploaded_img/'.$photo->image.'" alt="">
+      <img src="../imageArticle/'.$photo->image.'" alt="">
       <div class="name"></div>
       <div class="flex">
          <div class="prix"><span>€</span><span>/'.$AR->prix.'</span></div>

@@ -31,7 +31,7 @@
          <form action="../controllers/supprimerArticlePanier.php" method="post" class="box">
           <div class="box">
             <input type="hidden" name="articleid" value="'.$PAN->id.'">
-            <img src="../uploaded_img/'.$photo->image.'" alt="">
+            <img src="../imageArticle/'.$photo->image.'" alt="">
             <div class="name">'.$PAN->Titre.'</div>
             <div class="flex">
             <div class="prixTot">$/'.$PAN->prixTotal.'</div>
@@ -42,7 +42,7 @@
          </form>
          </div>
          </div>';
-        
+
       };
    ?>
 

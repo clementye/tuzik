@@ -33,8 +33,6 @@
     echo '  <button type="submit" name="search" value="search">Rechercher</button></form></br>';
   ?>
    <?php
-   //l'oeil était de trop, c'est mieux de faire que le titre du produit soit aussi un lien cliquable pour aller voir plus précisément le produit MAIS, comme manque de temps, on ne le fera pas.
-   //Et pour l'image, j'ai pas encore fait, donc on ce sera le dernier truc que je ferai lundi.
    foreach ($articles as $AR) {
      require_once "../models/photo.php";
      $photo = $photo_article($AR->id);
@@ -46,7 +44,7 @@
    <br><select class="quantite" name="quantite">
    </select>
     <button class="fas fa-heart" type="submit" name="ajouter_au_liste_de_souhaits"></button>
-    <img src="../uploaded_img/'.$photo->image.'" alt=""
+    <img src="../imageArticle/'.$photo->image.'" alt=""
     <div class="name"></div>
     <div class="flex">
        <div class="prix"><span>€</span><span>/'.$AR->prix.'</span></div>
