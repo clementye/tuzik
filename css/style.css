@@ -311,6 +311,15 @@ section{
    object-fit: contain;
    margin-bottom: 2rem;
 }
+.accueil-produits .box-container .box {
+   position: relative;
+   background-color: var(--white);
+   box-shadow: var(--box-shadow);
+   border-radius: .5rem;
+   border: var(--border);
+   padding: 2rem;
+   overflow: hidden;
+}
 
 .accueil-produits .slide .name{
    font-size: 2rem;

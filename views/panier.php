@@ -26,22 +26,23 @@
    <?php
       foreach ($panier as $PAN){
         require_once "../models/photo.php";
-        $photo = $photo_article($PAN->id);
-        echo '<div class="box-container">
-        <form action="../controllers/supprimerArticlePanier.php" method="post" class="box">
-         <div class="box">
-           <input type="hidden" name="articleid" value="'.$PAN->id.'">
-           <img src="../uploaded_img/'.$photo->image.'" alt="">
-           <div class="name">'.$PAN->Titre.'</div>
-           <div class="flex">
-           <div class="prixTot">$/'.$PAN->prixTotal.'</div>
-           <input type="number" name="Quantité" class="Quantité" min="1" max="'.$PAN->Quantité.'" onkeypress="if(this.value.length == 2) return false;" value="">
-           </div>
-           <div class="sub-total"> Prix Unitaire : <span>$/'.$PAN->PrixUnitaire.'</span> </div>
-           <input type="submit" value="supprimer" class="delete-btn" name="delete">
-        </form>
-        </div>
-        </div>';
+         $photo = $photo_article($PAN->id);
+         echo '<div class="box-container">
+         <form action="../controllers/supprimerArticlePanier.php" method="post" class="box">
+          <div class="box">
+            <input type="hidden" name="articleid" value="'.$PAN->id.'">
+            <img src="../uploaded_img/'.$photo->image.'" alt="">
+            <div class="name">'.$PAN->Titre.'</div>
+            <div class="flex">
+            <div class="prixTot">$/'.$PAN->prixTotal.'</div>
+            <input type="number" name="Quantité" class="Quantité" min="1" max="'.$PAN->Quantité.'" onkeypress="if(this.value.length == 2) return false;" value="">
+            </div>
+            <div class="sub-total"> Prix Unitaire : <span>$/'.$PAN->PrixUnitaire.'</span> </div>
+            <input type="submit" value="supprimer" class="delete-btn" name="delete">
+         </form>
+         </div>
+         </div>';
+        
       };
    ?>
 

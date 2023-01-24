@@ -60,7 +60,7 @@
       (PA.quantite*AR.prix) AS prixTotal, CA.Titre AS Catégorie
       FROM panier_article AS PA LEFT JOIN article AS AR ON PA.produitId = AR.id
       LEFT JOIN categorie AS CA ON AR.idCategorie = CA.id
-      WHERE PA.utilisateurId = ?;");
+      WHERE PA.utilisateurId = ? AND PA.produitId IS NOT NULL;");
     $statement->execute([$UID]);
   	$result = $statement->fetchAll(PDO::FETCH_OBJ);
   	return $result;
@@ -84,7 +84,7 @@
   $afficher_prix_total = function (string $UID) use ($db) {
     $statement = $db->prepare("SELECT sum(PA.quantite*AR.prix) AS prixTotal
       FROM panier_article AS PA LEFT JOIN article AS AR ON PA.produitId = AR.id
-      WHERE PA.utilisateurId = ?;");
+      WHERE PA.utilisateurId = ? AND PA.produitId IS NOT NULL");
     $statement->execute([$UID]);
     $result=$statement->fetch(PDO::FETCH_OBJ);
     return $result;
