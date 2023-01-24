@@ -20,7 +20,7 @@
 <section class="">
 <parent>
    
-   <table  border="1" cellpading="7" width=50% style="position:absolute; font-size:large">
+   <table  border="1" cellpading="7" width="50%" style="margin: 0 auto; font-size:large">
       
       <tr>
          <th>Nom</th>

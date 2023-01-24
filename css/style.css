@@ -471,9 +471,9 @@ section{
 }  
 
 .produits .box-container{
-   display: grid;
-   grid-template-columns: repeat(auto-fit, 33rem);
-   gap:1.5rem;
+   display: inline-block;
+   grid-template-columns: repeat(auto-fit, 53rem);
+   gap:10rem;
    justify-content: center;
    align-items: flex-start;
 }
@@ -493,6 +493,7 @@ section{
    width: 100%;
    object-fit: contain;
    margin-bottom: 1rem;
+   display: grid;
 }
 
 .produits .box-container .box .fa-heart,
@@ -811,6 +812,15 @@ section{
 .shopping-cart .sub-total span{
    color:var(--red);
 }
+
+.cart-total .box-container{
+   display: inline-block;
+   grid-template-columns: repeat(auto-fit, 53rem);
+   gap:10rem;
+   justify-content: center;
+   align-items: flex-start;
+}
+
 
 .cart-total{
    max-width: 50rem;

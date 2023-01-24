@@ -78,9 +78,8 @@
      <form action="../controllers/ajoutpanier.php" method="post" class="box">
      <div class="box">
      <input type="hidden" id="titre" name="titre" value="'.$AR->id.'"/>'.$AR->Titre.'
-     <br><select class="quantite" name="quantite">';
-      echo createSelectBox($AR->quantite);
-      echo '</select>
+     <br><select class="quantite" name="quantite">
+     </select>
       <button class="fas fa-heart" type="submit" name="ajouter_au_liste_de_souhaits"></button>
       <img src="../uploaded_img/" alt="">
       <div class="name"></div>

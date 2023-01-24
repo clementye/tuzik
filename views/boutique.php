@@ -32,19 +32,6 @@
     }
     echo '  <button type="submit" name="search" value="search">Rechercher</button></form></br>';
   ?>
-
-
-   <!--div class="box-container">
-
-  <form action="../controllers/ajoutpanier.php" method="post" class="box">
-  <!--  <input type="hidden" name="pid" value="<?= $fetch_product['id']; ?>">
-
-  </select>
-    <input type="hidden" name="name" value="<?= $fetch_product['name']; ?>"> <select class="" name="">
-
-    </select>
-    <input type="hidden" name="prix" value="<?= $fetch_product['prix']; ?>">
-    <input type="hidden" name="image" value="<?= $fetch_product['image_01']; ?>">-->
    <?php
    //l'oeil était de trop, c'est mieux de faire que le titre du produit soit aussi un lien cliquable pour aller voir plus précisément le produit MAIS, comme manque de temps, on ne le fera pas.
    //Et pour l'image, j'ai pas encore fait, donc on ce sera le dernier truc que je ferai lundi.
@@ -70,22 +57,6 @@
    </div>';
       }
    ?>
-      <!--<button class="fas fa-heart" type="submit" name="ajouter_au_liste_de_souhaits"></button>
-      <a href="fiche_produit.php?pid=<?= $fetch_product['id']; ?>" class="fas fa-eye"></a>
-      <img src="../uploaded_img/<?= $fetch_product['image_01']; ?>" alt="">
-      <div class="name"><?= $fetch_product['name']; ?></div>
-      <div class="flex">
-         <div class="prix"><span>$</span><?= $fetch_product['prix']; ?><span>/-</span></div>
-         <input type="number" name="qty" class="qty" min="1" max="99" onkeypress="if(this.value.length == 2) return false;" value="1">
-      </div>
-      <input type="submit" value="ajouter au panier" class="btn" name="ajouter_au_panier">-->
-
-   <!--?php
-      }
-   }else{
-      echo '<p class="empty">aucun produit trouvé !</p>';
-   }
-   ?-->
 
 </section>
 
